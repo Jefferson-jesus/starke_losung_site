@@ -1,4 +1,4 @@
-import { cookies, headers } from "next/headers";
+﻿import { cookies, headers } from "next/headers";
 import { routing } from "@/i18n/routing";
 import type { SupportedLocale } from "@/site.config";
 
@@ -35,13 +35,12 @@ export async function detectLocaleServer(): Promise<SupportedLocale> {
 
 export function getWhatsAppMessage(locale: SupportedLocale) {
   return locale === "pt-BR"
-    ? "Olá! Gostaria de solicitar um orçamento para meu projeto."
-    : "Hello! I would like to request a quote for my project.";
+    ? "Olá! Quero um site profissional para minha empresa. Pode me passar um orçamento?"
+    : "Hi! I want a professional website for my business. Can you send me a quote?";
 }
 
 export function getWhatsAppUrl(locale: SupportedLocale) {
-  const number =
-    process.env.WHATSAPP_NUMBER?.replace(/[^0-9]/g, "") || "5511979795088";
+  const number = process.env.WHATSAPP_NUMBER?.replace(/[^0-9]/g, "") || "5511979795088";
   const message = encodeURIComponent(getWhatsAppMessage(locale));
   return `https://wa.me/${number}?text=${message}`;
 }

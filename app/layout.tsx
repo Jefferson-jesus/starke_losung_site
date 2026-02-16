@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/site.config";
 
 const inter = Inter({ subsets: ["latin"] });
+const isProduction = process.env.VERCEL_ENV === "production";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.defaultUrl),
@@ -18,10 +19,29 @@ export const metadata: Metadata = {
     siteName: "STARKE LOSUNG",
     type: "website"
   },
-  robots: {
-    index: true,
-    follow: true
-  }
+  twitter: {
+    card: "summary_large_image",
+    title: "STARKE LOSUNG",
+    description: "Premium websites and digital growth agency."
+  },
+  robots: isProduction
+    ? {
+        index: true,
+        follow: true
+      }
+    : {
+        index: false,
+        follow: false,
+        nocache: true,
+        googleBot: {
+          index: false,
+          follow: false,
+          noimageindex: true,
+          "max-snippet": -1,
+          "max-image-preview": "none",
+          "max-video-preview": -1
+        }
+      }
 };
 
 export default function RootLayout({

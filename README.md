@@ -1,6 +1,6 @@
-# STARKE LOSUNG Website
+﻿# STARKE LOSUNG Website
 
-Site institucional em `Next.js + TypeScript + TailwindCSS` com `next-intl`, SEO técnico, formulário de contato e layout premium dark graphite/silver.
+Site institucional em `Next.js + TypeScript + TailwindCSS` com `next-intl`, SEO tecnico, formulario de contato e layout premium dark graphite/silver.
 
 ## Requisitos
 
@@ -15,10 +15,18 @@ cp .env.example .env.local
 npm run dev
 ```
 
+No PowerShell:
+
+```powershell
+Copy-Item .env.example .env.local
+npm run dev
+```
+
 Acesse `http://localhost:3000`.
 
-## Variáveis de ambiente
+## Variaveis de ambiente
 
+- `NEXT_PUBLIC_SITE_URL`
 - `RESEND_API_KEY`
 - `TURNSTILE_SECRET_KEY`
 - `TURNSTILE_SITE_KEY`
@@ -27,10 +35,10 @@ Acesse `http://localhost:3000`.
 
 ## Deploy na Vercel
 
-1. Suba o projeto para GitHub.
-2. Importe o repositório na Vercel.
+1. Suba o projeto no GitHub.
+2. Importe o repositorio na Vercel.
 3. Defina as env vars em `Project Settings > Environment Variables`.
-4. Deploy com framework preset `Next.js`.
+4. Faça deploy com preset `Next.js`.
 
 Comandos usados pela Vercel:
 
@@ -39,15 +47,17 @@ Comandos usados pela Vercel:
 
 ## Estrutura principal
 
-- `app/[locale]/` páginas internacionalizadas
-- `app/api/contact/route.ts` endpoint de contato (Resend + Turnstile fallback)
-- `messages/` traduções `en` e `pt-BR`
-- `components/` componentes reutilizáveis
-- `site.config.ts` seções de campanha/CTA configuráveis
-- `app/sitemap.ts` e `app/robots.ts` SEO técnico
+- `app/[locale]/` paginas internacionalizadas
+- `app/api/contact/route.ts` endpoint de contato (Resend + rate-limit + Turnstile placeholder)
+- `messages/` traducoes `en` e `pt-BR`
+- `components/` componentes reutilizaveis
+- `site.config.ts` secoes de campanha/CTA configuraveis
+- `app/sitemap.ts` e `app/robots.ts` SEO tecnico
 
-## Observações
+## Observacoes
 
-- Idioma é detectado por cookie (`NEXT_LOCALE`) e `Accept-Language` no servidor.
+- Idioma e detectado por cookie (`NEXT_LOCALE`) e `Accept-Language` no servidor.
 - No cliente, `LocaleSync` prioriza `localStorage`, depois `navigator.language`, com fallback `en`.
-- Se `RESEND_API_KEY` não estiver definida, o formulário funciona em modo stub (log no servidor).
+- Em preview/staging, `robots` bloqueia indexacao.
+- Em producao (`VERCEL_ENV=production`), indexacao e sitemap sao liberados.
+- Se `RESEND_API_KEY` nao estiver definida, o formulario funciona em modo stub (log no servidor).

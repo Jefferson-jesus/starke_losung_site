@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/site.config";
 import { Link } from "@/lib/navigation";
 import { getPageMetadata } from "@/lib/metadata";
@@ -17,6 +17,7 @@ type ProcessStep = { title: string; description: string };
 type PortfolioCard = { title: string; category: string };
 type Testimonial = { name: string; role: string; quote: string };
 type FaqItem = { question: string; answer: string };
+type TrustItem = { icon: string; title: string; description: string };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -25,16 +26,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations({ locale, namespace: "home" });
   const common = await getTranslations({ locale, namespace: "common" });
   const whatsappUrl = getWhatsAppUrl(locale);
+
   const serviceCards = t.raw("services.cards") as ServiceCard[];
   const whyUsBlocks = t.raw("whyUs.blocks") as WhyBlock[];
   const processSteps = t.raw("process.steps") as ProcessStep[];
   const portfolioCards = t.raw("portfolio.cards") as PortfolioCard[];
   const testimonials = t.raw("testimonials.items") as Testimonial[];
   const faqItems = t.raw("faq.items") as FaqItem[];
-  const trustItems = t.raw("trust.items") as string[];
+  const trustItems = t.raw("trust.items") as TrustItem[];
+  const heroBullets = t.raw("hero.rightCardBullets") as string[];
 
   const campaignText = locale === "pt-BR" ? siteConfig.campaignBanner.text_pt : siteConfig.campaignBanner.text_en;
   const midCtaText = locale === "pt-BR" ? siteConfig.midCta.text_pt : siteConfig.midCta.text_en;
@@ -51,8 +56,8 @@ export default async function HomePage({ params }: Props) {
               </span>
               {campaignText}
             </p>
-            <Link href={siteConfig.campaignBanner.link} className="text-silver-100 underline">
-              {common("ctaQuote")}
+            <Link href={siteConfig.campaignBanner.link} className="text-silver-100 underline underline-offset-4">
+              {common("learnMore")}
             </Link>
           </div>
         </section>
@@ -79,25 +84,35 @@ export default async function HomePage({ params }: Props) {
           </div>
           <p className="text-sm text-silver-300">{t("hero.socialProof")}</p>
         </div>
-        <div className="card-premium flex items-center justify-center">
-          <div className="w-full max-w-sm space-y-5">
-            <Image src="/logo-mark.svg" alt="STARKE LOSUNG mark" width={92} height={92} className="mx-auto" />
-            <p className="text-center text-lg font-medium text-silver-100">STARKE LOSUNG</p>
-            <p className="text-center text-sm text-silver-300">
-              Premium digital positioning for companies that need authority, trust and real growth.
-            </p>
+
+        <div className="card-premium">
+          <div className="space-y-5">
+            <Image src="/logo-mark.svg" alt="STARKE LOSUNG mark" width={72} height={72} className="mx-auto" />
+            <h2 className="text-center text-xl font-semibold text-silver-100">{t("hero.rightCardTitle")}</h2>
+            <p className="text-center text-sm text-silver-300">{t("hero.rightCardSubtitle")}</p>
+            <ul className="space-y-2 text-sm text-silver-200">
+              {heroBullets.map((bullet) => (
+                <li key={bullet} className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-silver-300" aria-hidden="true" />
+                  {bullet}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
       <section className="border-y border-white/10 bg-black/20">
         <div className="section-shell py-8">
-          <p className="mb-6 text-center text-sm uppercase tracking-[0.2em] text-silver-300">{t("trust.title")}</p>
-          <div className="grid grid-cols-2 gap-4 text-center text-sm text-silver-200 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="grid gap-4 md:grid-cols-4">
             {trustItems.map((item) => (
-              <p key={item} className="rounded-xl border border-white/10 bg-white/5 p-3">
-                {item}
-              </p>
+              <article key={item.title} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                <p className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-xs font-semibold text-silver-100">
+                  {item.icon}
+                </p>
+                <h2 className="mt-3 text-sm font-semibold text-silver-100">{item.title}</h2>
+                <p className="mt-1 text-xs text-silver-300">{item.description}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -112,7 +127,7 @@ export default async function HomePage({ params }: Props) {
               <h3 className="text-xl font-semibold text-silver-100">{item.title}</h3>
               <p className="mt-3 text-sm text-silver-300">{item.description}</p>
               <Link href={`/services/${item.slug}`} className="mt-4 inline-block text-sm text-silver-200 underline">
-                Learn more
+                {common("learnMore")}
               </Link>
             </article>
           ))}
@@ -183,8 +198,8 @@ export default async function HomePage({ params }: Props) {
         <h2 className="text-3xl font-semibold text-metal">{t("testimonials.title")}</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {testimonials.map((item) => (
-            <article key={item.name} className="card-premium">
-              <p className="text-sm text-silver-200">"{item.quote}"</p>
+            <article key={`${item.name}-${item.role}`} className="card-premium">
+              <p className="text-sm text-silver-200">&ldquo;{item.quote}&rdquo;</p>
               <p className="mt-5 text-sm font-semibold text-silver-100">{item.name}</p>
               <p className="text-xs text-silver-400">{item.role}</p>
             </article>
