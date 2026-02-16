@@ -1,0 +1,211 @@
+{
+  "common": {
+    "menu": "Menu",
+    "language": "Language",
+    "languageLabel": "Language selector",
+    "ctaQuote": "Get a Quote",
+    "ctaEmail": "Email Us",
+    "ctaWhatsApp": "Chat on WhatsApp",
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "pricing": "Pricing",
+      "about": "About",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "terms": "Terms"
+    }
+  },
+  "topbar": {
+    "international": "International agency: websites, SEO and digital campaigns in Portuguese and English.",
+    "emailCta": "contact by e-mail"
+  },
+  "home": {
+    "campaignPrefix": "Campaign",
+    "hero": {
+      "kicker": "Premium Website & Growth Agency",
+      "title": "Elevate your brand with a premium website that sells every day.",
+      "subtitle": "STARKE LOSUNG creates high-performance websites and digital campaigns with elegant design, SEO strategy and conversion-focused architecture.",
+      "primaryCta": "Get a Quote",
+      "secondaryCta": "View Portfolio",
+      "socialProof": "Trusted by brands in Brazil, Europe and North America."
+    },
+    "trust": {
+      "title": "Trusted by fast-growing companies",
+      "items": ["B2B Services", "Medical Clinics", "Law Firms", "E-commerce", "Education", "Real Estate"]
+    },
+    "services": {
+      "title": "Services",
+      "subtitle": "Complete digital execution from strategic planning to optimized launch.",
+      "cards": [
+        {
+          "slug": "website-design-development",
+          "title": "Website Design & Development",
+          "description": "Premium institutional websites and landing pages focused on speed, SEO and lead generation."
+        },
+        {
+          "slug": "seo-content-strategy",
+          "title": "SEO & Content Strategy",
+          "description": "Technical SEO, semantic architecture and content planning to rank with consistency."
+        },
+        {
+          "slug": "paid-media-growth",
+          "title": "Paid Media & Growth",
+          "description": "Campaign setup and optimization on Google and Meta with clear KPI dashboards."
+        },
+        {
+          "slug": "branding-conversion-ux",
+          "title": "Branding & Conversion UX",
+          "description": "Visual identity and user experience systems that increase trust and conversion."
+        }
+      ]
+    },
+    "whyUs": {
+      "title": "Why STARKE LOSUNG",
+      "blocks": [
+        {
+          "title": "Premium Craft",
+          "description": "Elegant minimal design with high perceived value."
+        },
+        {
+          "title": "Business Focus",
+          "description": "Every page is built for growth, leads and revenue."
+        },
+        {
+          "title": "Fast Delivery",
+          "description": "Lean process with clear milestones and weekly updates."
+        },
+        {
+          "title": "Long-term Partner",
+          "description": "Support, optimization and campaign evolution after launch."
+        }
+      ]
+    },
+    "process": {
+      "title": "Process",
+      "steps": [
+        { "title": "Discovery", "description": "Goals, positioning and market context." },
+        { "title": "Architecture", "description": "Wireframes, content structure and SEO map." },
+        { "title": "Build", "description": "Premium interface, copy and conversion implementation." },
+        { "title": "Launch & Scale", "description": "Go-live, analytics and iterative improvements." }
+      ]
+    },
+    "portfolio": {
+      "title": "Selected Portfolio",
+      "cards": [
+        { "title": "Luxury Dental Clinic", "category": "Institutional Website" },
+        { "title": "Corporate Legal Firm", "category": "Lead Generation" },
+        { "title": "Industrial Supplier", "category": "B2B Platform" },
+        { "title": "Aesthetic Studio", "category": "Branding + Landing Page" },
+        { "title": "Construction Company", "category": "SEO Website" },
+        { "title": "Consulting Agency", "category": "Campaign Funnel" }
+      ]
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "items": [
+        {
+          "name": "Carla M.",
+          "role": "CEO, Health Group",
+          "quote": "The new website positioned us at another level and increased qualified leads in the first month."
+        },
+        {
+          "name": "Daniel R.",
+          "role": "Partner, Law Office",
+          "quote": "Professional process, clear communication and excellent final quality."
+        },
+        {
+          "name": "Olivia S.",
+          "role": "Marketing Manager",
+          "quote": "Design, performance and SEO came together in a way we had not seen with previous agencies."
+        }
+      ]
+    },
+    "faq": {
+      "title": "FAQ",
+      "items": [
+        {
+          "question": "How long does a project take?",
+          "answer": "Most institutional websites are delivered in 2 to 6 weeks depending on scope."
+        },
+        {
+          "question": "Do you offer monthly support?",
+          "answer": "Yes. We offer maintenance, SEO and media optimization retainers."
+        },
+        {
+          "question": "Can you work in English and Portuguese?",
+          "answer": "Yes. The team is prepared for bilingual delivery and multilingual websites."
+        },
+        {
+          "question": "Do you only build new websites?",
+          "answer": "No. We can redesign existing websites and improve technical SEO and conversion."
+        }
+      ]
+    },
+    "midCtaButton": "Talk to a Specialist",
+    "finalCtaButton": "Request a Strategic Call",
+    "contactTitle": "Contact STARKE LOSUNG",
+    "contactSubtitle": "Tell us your goal and we will return with a clear plan, timeline and investment range."
+  },
+  "pages": {
+    "services": {
+      "title": "Services",
+      "subtitle": "High-value digital solutions to grow your business online."
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "subtitle": "A curated selection of recent projects."
+    },
+    "pricing": {
+      "title": "Pricing",
+      "subtitle": "Flexible plans for each growth stage."
+    },
+    "about": {
+      "title": "About",
+      "subtitle": "A team focused on premium digital execution with measurable results."
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Request your quote and receive a strategic diagnosis."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "We collect only the data necessary to deliver our services and support."
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "subtitle": "By using this website, you agree to our service and usage terms."
+    }
+  },
+  "contactForm": {
+    "name": "Name",
+    "email": "Email",
+    "country": "Country",
+    "siteType": "Website Type",
+    "selectType": "Select an option",
+    "typeInstitutional": "Institutional Website",
+    "typeLanding": "Landing Page",
+    "typeEcommerce": "E-commerce",
+    "typeCustom": "Custom Project",
+    "message": "Message",
+    "turnstile": "Cloudflare Turnstile token",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully. We will contact you shortly.",
+    "error": "Could not send your message. Please try again."
+  },
+  "footer": {
+    "tagline": "Premium websites and digital promotion for modern businesses.",
+    "linksTitle": "Navigation",
+    "contactTitle": "Contact",
+    "socialTitle": "Social",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "© {year} STARKE LOSUNG. All rights reserved."
+  }
+}

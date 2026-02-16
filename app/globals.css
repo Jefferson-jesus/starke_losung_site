@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-graphite-900 text-silver-100 antialiased;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-silver-300 focus-visible:ring-offset-2 focus-visible:ring-offset-graphite-900;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.card-premium {
+  @apply rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition duration-300 hover:border-silver-300/40 hover:bg-white/10;
+}
+
+.text-metal {
+  background: linear-gradient(120deg, #f5f7fa, #b7c2ce 40%, #f5f7fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

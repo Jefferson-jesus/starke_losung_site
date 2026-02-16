@@ -1,0 +1,211 @@
+{
+  "common": {
+    "menu": "Menu",
+    "language": "Idioma",
+    "languageLabel": "Seletor de idioma",
+    "ctaQuote": "Solicitar Orçamento",
+    "ctaEmail": "Enviar E-mail",
+    "ctaWhatsApp": "Chamar no WhatsApp",
+    "nav": {
+      "home": "Início",
+      "services": "Serviços",
+      "portfolio": "Portfólio",
+      "pricing": "Preços",
+      "about": "Sobre",
+      "contact": "Contato",
+      "privacy": "Privacidade",
+      "terms": "Termos"
+    }
+  },
+  "topbar": {
+    "international": "Agência internacional: sites, SEO e campanhas digitais em português e inglês.",
+    "emailCta": "contato por e-mail"
+  },
+  "home": {
+    "campaignPrefix": "Campanha",
+    "hero": {
+      "kicker": "Agência Premium de Sites e Crescimento",
+      "title": "Eleve sua marca com um site premium que vende todos os dias.",
+      "subtitle": "A STARKE LOSUNG cria sites de alta performance e campanhas digitais com design elegante, estratégia de SEO e foco em conversão.",
+      "primaryCta": "Solicitar Orçamento",
+      "secondaryCta": "Ver Portfólio",
+      "socialProof": "Marcas no Brasil, Europa e América do Norte confiam no nosso trabalho."
+    },
+    "trust": {
+      "title": "Empresas que confiam no nosso processo",
+      "items": ["Serviços B2B", "Clínicas Médicas", "Escritórios Jurídicos", "E-commerce", "Educação", "Imobiliário"]
+    },
+    "services": {
+      "title": "Serviços",
+      "subtitle": "Execução digital completa do planejamento estratégico ao lançamento otimizado.",
+      "cards": [
+        {
+          "slug": "criacao-sites-desenvolvimento",
+          "title": "Criação de Sites e Desenvolvimento",
+          "description": "Sites institucionais premium e landing pages focadas em velocidade, SEO e geração de leads."
+        },
+        {
+          "slug": "seo-estrategia-conteudo",
+          "title": "SEO e Estratégia de Conteúdo",
+          "description": "SEO técnico, arquitetura semântica e planejamento editorial para ranquear com consistência."
+        },
+        {
+          "slug": "midia-paga-growth",
+          "title": "Mídia Paga e Growth",
+          "description": "Configuração e otimização de campanhas no Google e Meta com indicadores claros."
+        },
+        {
+          "slug": "branding-ux-conversao",
+          "title": "Branding e UX de Conversão",
+          "description": "Identidade visual e experiência de navegação para aumentar confiança e taxa de conversão."
+        }
+      ]
+    },
+    "whyUs": {
+      "title": "Por que STARKE LOSUNG",
+      "blocks": [
+        {
+          "title": "Acabamento Premium",
+          "description": "Design minimalista elegante com percepção de alto valor."
+        },
+        {
+          "title": "Foco em Negócio",
+          "description": "Cada página é pensada para crescimento, leads e receita."
+        },
+        {
+          "title": "Entrega Ágil",
+          "description": "Processo enxuto com marcos claros e evolução semanal."
+        },
+        {
+          "title": "Parceria Contínua",
+          "description": "Suporte, otimização e evolução de campanhas após o lançamento."
+        }
+      ]
+    },
+    "process": {
+      "title": "Processo",
+      "steps": [
+        { "title": "Diagnóstico", "description": "Objetivos, posicionamento e contexto do mercado." },
+        { "title": "Arquitetura", "description": "Wireframes, estrutura de conteúdo e mapa SEO." },
+        { "title": "Construção", "description": "Interface premium, copy e implementação de conversão." },
+        { "title": "Lançamento e Escala", "description": "Publicação, analytics e melhorias contínuas." }
+      ]
+    },
+    "portfolio": {
+      "title": "Portfólio em Destaque",
+      "cards": [
+        { "title": "Clínica Odontológica Premium", "category": "Site Institucional" },
+        { "title": "Escritório Jurídico Corporativo", "category": "Geração de Leads" },
+        { "title": "Fornecedor Industrial", "category": "Plataforma B2B" },
+        { "title": "Estúdio de Estética", "category": "Branding + Landing Page" },
+        { "title": "Construtora", "category": "Site com SEO" },
+        { "title": "Consultoria Executiva", "category": "Funil de Campanha" }
+      ]
+    },
+    "testimonials": {
+      "title": "Depoimentos",
+      "items": [
+        {
+          "name": "Carla M.",
+          "role": "CEO, Grupo de Saúde",
+          "quote": "O novo site nos posicionou em outro nível e aumentou os leads qualificados já no primeiro mês."
+        },
+        {
+          "name": "Daniel R.",
+          "role": "Sócio, Escritório Jurídico",
+          "quote": "Processo profissional, comunicação clara e qualidade final excelente."
+        },
+        {
+          "name": "Olivia S.",
+          "role": "Gerente de Marketing",
+          "quote": "Design, performance e SEO vieram juntos de uma forma que não tínhamos visto em outras agências."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Perguntas Frequentes",
+      "items": [
+        {
+          "question": "Quanto tempo leva um projeto?",
+          "answer": "A maioria dos sites institucionais fica pronta entre 2 e 6 semanas, conforme escopo."
+        },
+        {
+          "question": "Vocês oferecem suporte mensal?",
+          "answer": "Sim. Temos planos de manutenção, SEO e otimização de mídia."
+        },
+        {
+          "question": "Atendem em inglês e português?",
+          "answer": "Sim. O time está preparado para entrega bilíngue e sites multilíngues."
+        },
+        {
+          "question": "Vocês só fazem site novo?",
+          "answer": "Não. Também reformulamos sites existentes e melhoramos SEO técnico e conversão."
+        }
+      ]
+    },
+    "midCtaButton": "Falar com Especialista",
+    "finalCtaButton": "Solicitar Diagnóstico Estratégico",
+    "contactTitle": "Contato STARKE LOSUNG",
+    "contactSubtitle": "Conte seu objetivo e retornamos com plano claro, prazo e faixa de investimento."
+  },
+  "pages": {
+    "services": {
+      "title": "Serviços",
+      "subtitle": "Soluções digitais de alto valor para expandir seu negócio no online."
+    },
+    "portfolio": {
+      "title": "Portfólio",
+      "subtitle": "Uma curadoria de projetos recentes."
+    },
+    "pricing": {
+      "title": "Preços",
+      "subtitle": "Planos flexíveis para cada estágio de crescimento."
+    },
+    "about": {
+      "title": "Sobre",
+      "subtitle": "Um time focado em execução digital premium com resultados mensuráveis."
+    },
+    "contact": {
+      "title": "Contato",
+      "subtitle": "Solicite seu orçamento e receba um diagnóstico estratégico."
+    },
+    "privacy": {
+      "title": "Política de Privacidade",
+      "subtitle": "Coletamos apenas os dados necessários para prestar serviços e suporte."
+    },
+    "terms": {
+      "title": "Termos de Uso",
+      "subtitle": "Ao usar este site, você concorda com nossos termos de serviço e uso."
+    }
+  },
+  "contactForm": {
+    "name": "Nome",
+    "email": "E-mail",
+    "country": "País",
+    "siteType": "Tipo de Site",
+    "selectType": "Selecione uma opção",
+    "typeInstitutional": "Site Institucional",
+    "typeLanding": "Landing Page",
+    "typeEcommerce": "E-commerce",
+    "typeCustom": "Projeto Personalizado",
+    "message": "Mensagem",
+    "turnstile": "Token do Cloudflare Turnstile",
+    "submit": "Enviar Mensagem",
+    "sending": "Enviando...",
+    "success": "Mensagem enviada com sucesso. Em breve entraremos em contato.",
+    "error": "Não foi possível enviar sua mensagem. Tente novamente."
+  },
+  "footer": {
+    "tagline": "Sites premium e divulgação digital para empresas modernas.",
+    "linksTitle": "Navegação",
+    "contactTitle": "Contato",
+    "socialTitle": "Redes",
+    "services": "Serviços",
+    "portfolio": "Portfólio",
+    "pricing": "Preços",
+    "about": "Sobre",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "copyright": "© {year} STARKE LOSUNG. Todos os direitos reservados."
+  }
+}

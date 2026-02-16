@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs><linearGradient id="a" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1f2936"/><stop offset="1" stop-color="#2d3a4d"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="url(#a)"/>
+  <text x="80" y="420" font-size="88" fill="#d7dee7" font-family="Arial">Project 03</text>
+</svg>
