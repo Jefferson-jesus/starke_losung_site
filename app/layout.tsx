@@ -1,7 +1,9 @@
 ﻿import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { cookies } from "next/headers";
 import "./globals.css";
 import { siteConfig } from "@/site.config";
+import { SITE_MODE_COOKIE, resolveSiteMode } from "@/lib/site-mode";
 
 const inter = Inter({ subsets: ["latin"] });
 const isProduction = process.env.VERCEL_ENV === "production";
@@ -44,11 +46,14 @@ export const metadata: Metadata = {
       }
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{ children: React.ReactNode }>) {
+  const cookieStore = await cookies();
+  const initialMode = resolveSiteMode(cookieStore.get(SITE_MODE_COOKIE)?.value) || siteConfig.mode.default;
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-mode={initialMode}>
       <body className={inter.className}>{children}</body>
     </html>
   );

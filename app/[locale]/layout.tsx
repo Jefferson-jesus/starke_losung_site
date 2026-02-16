@@ -9,6 +9,9 @@ import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { LocaleSync } from "@/components/locale-sync";
 import { getWhatsAppUrl } from "@/lib/locale";
 import { siteConfig } from "@/site.config";
+import { SITE_MODE_COOKIE, resolveSiteMode } from "@/lib/site-mode";
+import { cookies } from "next/headers";
+import { SiteModeProvider } from "@/components/site-mode-provider";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -30,6 +33,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
   const typedLocale = locale as "en" | "pt-BR";
   const whatsappUrl = getWhatsAppUrl(typedLocale);
+  const cookieStore = await cookies();
+  const initialMode = resolveSiteMode(cookieStore.get(SITE_MODE_COOKIE)?.value) || siteConfig.mode.default;
 
   const schema = {
     "@context": "https://schema.org",
@@ -72,14 +77,16 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <LocaleSync locale={typedLocale} />
-      <div className="min-h-screen bg-premium-gradient">
-        <TopBar />
-        <Header />
-        <main>{children}</main>
-        <Footer whatsappUrl={whatsappUrl} />
-        <WhatsAppFloat href={whatsappUrl} label="WhatsApp" />
-      </div>
+      <SiteModeProvider initialMode={initialMode}>
+        <LocaleSync locale={typedLocale} />
+        <div className="min-h-screen bg-[var(--gradient-bg)] transition-colors duration-[var(--motion-slow)] ease-[var(--ease-elegant)]">
+          <TopBar />
+          <Header showModeToggle={siteConfig.mode.showToggle} />
+          <main>{children}</main>
+          <Footer whatsappUrl={whatsappUrl} showModeToggle={siteConfig.mode.showToggle} />
+          <WhatsAppFloat href={whatsappUrl} label="WhatsApp" />
+        </div>
+      </SiteModeProvider>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </NextIntlClientProvider>
   );

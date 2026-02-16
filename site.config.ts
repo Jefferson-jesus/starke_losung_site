@@ -3,6 +3,12 @@
   defaultUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://starkelosung.com",
   contactEmail: process.env.CONTACT_EMAIL || "hello@starkelosung.com",
   whatsappNumber: process.env.WHATSAPP_NUMBER || "+5511979795088",
+  mode: {
+    default: (process.env.NEXT_PUBLIC_SITE_MODE === "premium" ? "premium" : "standard") as "standard" | "premium",
+    showToggle:
+      process.env.NEXT_PUBLIC_SHOW_MODE_TOGGLE === "true" || process.env.VERCEL_ENV !== "production",
+    showProcessInStandard: true
+  },
   campaignBanner: {
     enabled: true,
     text_pt: "Oferta mensal: Landing page premium + WhatsApp + SEO tecnico inicial.",
