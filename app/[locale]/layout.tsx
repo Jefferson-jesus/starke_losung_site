@@ -1,4 +1,4 @@
-import { hasLocale, NextIntlClientProvider } from "next-intl";
+﻿import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
@@ -39,7 +39,22 @@ export default async function LocaleLayout({ children, params }: Props) {
         name: siteConfig.name,
         url: siteConfig.defaultUrl,
         email: siteConfig.contactEmail,
-        sameAs: [siteConfig.social.instagram, siteConfig.social.linkedin, siteConfig.social.facebook]
+        sameAs: [siteConfig.social.instagram, siteConfig.social.linkedin, siteConfig.social.facebook],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            contactType: "customer support",
+            email: siteConfig.contactEmail,
+            availableLanguage: ["English", "Portuguese"]
+          },
+          {
+            "@type": "ContactPoint",
+            contactType: "sales",
+            telephone: siteConfig.whatsappNumber,
+            areaServed: ["BR", "US", "CA", "EU"],
+            availableLanguage: ["English", "Portuguese"]
+          }
+        ]
       },
       {
         "@type": "LocalBusiness",
@@ -49,7 +64,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         telephone: siteConfig.whatsappNumber,
         description:
           typedLocale === "pt-BR"
-            ? "Agência de criação de sites e divulgação digital."
+            ? "Agencia de criacao de sites e divulgacao digital."
             : "Website creation and digital growth agency."
       }
     ]

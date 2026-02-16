@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PageIntro } from "@/components/page-intro";
 import { getPageMetadata } from "@/lib/metadata";
 
@@ -17,6 +17,8 @@ type PortfolioCard = { title: string; category: string };
 
 export default async function PortfolioPage({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations({ locale, namespace: "pages.portfolio" });
   const home = await getTranslations({ locale, namespace: "home" });
   const cards = home.raw("portfolio.cards") as PortfolioCard[];

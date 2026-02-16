@@ -1,22 +1,22 @@
-export const siteConfig = {
+﻿export const siteConfig = {
   name: "STARKE LOSUNG",
-  defaultUrl: "https://starkelosung.com",
+  defaultUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://starkelosung.com",
   contactEmail: process.env.CONTACT_EMAIL || "hello@starkelosung.com",
   whatsappNumber: process.env.WHATSAPP_NUMBER || "+5511979795088",
   campaignBanner: {
     enabled: true,
-    text_pt: "Campanha internacional: landing page premium + SEO técnico com condição especial.",
-    text_en: "International campaign: premium landing page + technical SEO with special conditions.",
+    text_pt: "Oferta mensal: Landing page premium + WhatsApp + SEO tecnico inicial.",
+    text_en: "Monthly deal: Premium landing page + WhatsApp + initial technical SEO.",
     link: "/pricing"
   },
   midCta: {
     enabled: true,
-    text_pt: "Quer acelerar sua presença digital com execução completa?",
-    text_en: "Want to accelerate your digital presence with end-to-end execution?"
+    text_pt: "Pronto para escalar sua presenca digital com estrutura pronta para anuncios?",
+    text_en: "Ready to scale your digital presence with an ads-ready structure?"
   },
   finalCta: {
     enabled: true,
-    text_pt: "Vamos construir um site que converte visitantes em clientes.",
+    text_pt: "Vamos criar um site premium para transformar visitas em oportunidades reais.",
     text_en: "Let's build a website that turns visitors into clients."
   },
   social: {

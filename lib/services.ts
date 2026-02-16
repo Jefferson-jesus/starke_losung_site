@@ -1,4 +1,4 @@
-export type ServiceItem = {
+﻿export type ServiceItem = {
   slug: string;
   title: { en: string; "pt-BR": string };
   summary: { en: string; "pt-BR": string };
@@ -7,131 +7,63 @@ export type ServiceItem = {
 
 export const services: ServiceItem[] = [
   {
-    slug: "website-design-development",
+    slug: "landing-pages",
     title: {
-      en: "Website Design & Development",
-      "pt-BR": "Criação de Sites e Desenvolvimento"
+      en: "Landing Pages",
+      "pt-BR": "Landing Pages"
     },
     summary: {
-      en: "Premium institutional websites and conversion-focused landing pages.",
-      "pt-BR": "Sites institucionais premium e landing pages focadas em conversão."
+      en: "Ad-focused pages with strong CTAs, speed and conversion.",
+      "pt-BR": "Paginas para anuncios com CTA forte, velocidade e conversao."
     },
     content: {
-      en: "We design and develop high-performance websites using modern technologies, SEO-first architecture and clear conversion flows.",
-      "pt-BR":
-        "Criamos sites de alta performance com tecnologias modernas, arquitetura SEO-first e fluxos de conversão claros."
+      en: "Built for paid traffic with clear messaging hierarchy, one-click contact and technical SEO setup.",
+      "pt-BR": "Criadas para trafego pago com hierarquia de mensagem clara, contato em um clique e SEO tecnico aplicado."
     }
   },
   {
-    slug: "seo-content-strategy",
+    slug: "business-websites",
     title: {
-      en: "SEO & Content Strategy",
-      "pt-BR": "SEO e Estratégia de Conteúdo"
+      en: "Business Websites",
+      "pt-BR": "Sites Empresariais"
     },
     summary: {
-      en: "Technical SEO and structured content plans for growth.",
-      "pt-BR": "SEO técnico e planejamento de conteúdo estruturado para crescimento."
+      en: "Professional digital presence for companies in Brazil and abroad.",
+      "pt-BR": "Presenca digital profissional para empresas no Brasil e exterior."
     },
     content: {
-      en: "From keyword mapping to technical optimization, we structure your site to compete for relevant organic traffic.",
-      "pt-BR":
-        "Do mapeamento de palavras-chave à otimização técnica, estruturamos seu site para disputar tráfego orgânico qualificado."
+      en: "Institutional websites with scalable structure, premium UI and conversion-focused sections.",
+      "pt-BR": "Sites institucionais com estrutura escalavel, UI premium e secoes focadas em conversao."
     }
   },
   {
-    slug: "paid-media-growth",
+    slug: "seo-performance",
     title: {
-      en: "Paid Media & Growth",
-      "pt-BR": "Mídia Paga e Growth"
+      en: "SEO & Performance",
+      "pt-BR": "SEO e Performance"
     },
     summary: {
-      en: "Campaigns with measurable ROI on Google and Meta.",
-      "pt-BR": "Campanhas com ROI mensurável no Google e Meta."
+      en: "Speed, structure and technical quality to rank better and convert more.",
+      "pt-BR": "Velocidade, estrutura e qualidade tecnica para ranquear melhor e converter mais."
     },
     content: {
-      en: "We build and optimize ad campaigns focused on qualified leads, CAC control and scalable growth.",
-      "pt-BR":
-        "Montamos e otimizamos campanhas focadas em leads qualificados, controle de CAC e escala sustentável."
+      en: "Technical audits, metadata strategy, page speed optimization and implementation of best practices.",
+      "pt-BR": "Auditoria tecnica, estrategia de metadata, otimizacao de velocidade e implementacao de boas praticas."
     }
   },
   {
-    slug: "branding-conversion-ux",
+    slug: "maintenance-growth",
     title: {
-      en: "Branding & Conversion UX",
-      "pt-BR": "Branding e UX de Conversão"
+      en: "Maintenance & Growth",
+      "pt-BR": "Manutencao e Growth"
     },
     summary: {
-      en: "Visual systems and UX patterns that build trust.",
-      "pt-BR": "Sistema visual e UX orientados para gerar confiança."
+      en: "Ongoing support, updates and campaign evolution.",
+      "pt-BR": "Suporte continuo, atualizacoes e evolucao de campanhas."
     },
     content: {
-      en: "We refine your brand identity and digital interface to communicate authority and reduce friction in the customer journey.",
-      "pt-BR":
-        "Refinamos sua identidade e interface digital para comunicar autoridade e reduzir fricção na jornada do cliente."
-    }
-  },
-  {
-    slug: "criacao-sites-desenvolvimento",
-    title: {
-      en: "Website Design & Development",
-      "pt-BR": "Criação de Sites e Desenvolvimento"
-    },
-    summary: {
-      en: "Premium institutional websites and conversion-focused landing pages.",
-      "pt-BR": "Sites institucionais premium e landing pages focadas em conversão."
-    },
-    content: {
-      en: "We design and develop high-performance websites using modern technologies, SEO-first architecture and clear conversion flows.",
-      "pt-BR":
-        "Criamos sites de alta performance com tecnologias modernas, arquitetura SEO-first e fluxos de conversão claros."
-    }
-  },
-  {
-    slug: "seo-estrategia-conteudo",
-    title: {
-      en: "SEO & Content Strategy",
-      "pt-BR": "SEO e Estratégia de Conteúdo"
-    },
-    summary: {
-      en: "Technical SEO and structured content plans for growth.",
-      "pt-BR": "SEO técnico e planejamento de conteúdo estruturado para crescimento."
-    },
-    content: {
-      en: "From keyword mapping to technical optimization, we structure your site to compete for relevant organic traffic.",
-      "pt-BR":
-        "Do mapeamento de palavras-chave à otimização técnica, estruturamos seu site para disputar tráfego orgânico qualificado."
-    }
-  },
-  {
-    slug: "midia-paga-growth",
-    title: {
-      en: "Paid Media & Growth",
-      "pt-BR": "Mídia Paga e Growth"
-    },
-    summary: {
-      en: "Campaigns with measurable ROI on Google and Meta.",
-      "pt-BR": "Campanhas com ROI mensurável no Google e Meta."
-    },
-    content: {
-      en: "We build and optimize ad campaigns focused on qualified leads, CAC control and scalable growth.",
-      "pt-BR":
-        "Montamos e otimizamos campanhas focadas em leads qualificados, controle de CAC e escala sustentável."
-    }
-  },
-  {
-    slug: "branding-ux-conversao",
-    title: {
-      en: "Branding & Conversion UX",
-      "pt-BR": "Branding e UX de Conversão"
-    },
-    summary: {
-      en: "Visual systems and UX patterns that build trust.",
-      "pt-BR": "Sistema visual e UX orientados para gerar confiança."
-    },
-    content: {
-      en: "We refine your brand identity and digital interface to communicate authority and reduce friction in the customer journey.",
-      "pt-BR":
-        "Refinamos sua identidade e interface digital para comunicar autoridade e reduzir fricção na jornada do cliente."
+      en: "Continuous site updates, performance checks and strategic improvements over time.",
+      "pt-BR": "Atualizacao continua do site, revisoes de performance e melhorias estrategicas recorrentes."
     }
   }
 ];

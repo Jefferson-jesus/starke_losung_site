@@ -3,14 +3,18 @@
     "menu": "Menu",
     "language": "Idioma",
     "languageLabel": "Seletor de idioma",
-    "ctaQuote": "Solicitar Orçamento",
-    "ctaEmail": "Enviar E-mail",
+    "ctaQuote": "Solicitar Orcamento",
+    "ctaEmail": "E-mail",
     "ctaWhatsApp": "Chamar no WhatsApp",
+    "learnMore": "Saiba mais",
+    "viewMore": "Ver mais",
+    "backToTop": "Voltar ao topo",
+    "loading": "Carregando",
     "nav": {
-      "home": "Início",
-      "services": "Serviços",
-      "portfolio": "Portfólio",
-      "pricing": "Preços",
+      "home": "Inicio",
+      "services": "Servicos",
+      "portfolio": "Portfolio",
+      "pricing": "Precos",
       "about": "Sobre",
       "contact": "Contato",
       "privacy": "Privacidade",
@@ -18,46 +22,73 @@
     }
   },
   "topbar": {
-    "international": "Agência internacional: sites, SEO e campanhas digitais em português e inglês.",
-    "emailCta": "contato por e-mail"
+    "international": "Atendemos Brasil, EUA, Canada e Europa",
+    "emailCta": "contato por email"
   },
   "home": {
     "campaignPrefix": "Campanha",
     "hero": {
-      "kicker": "Agência Premium de Sites e Crescimento",
-      "title": "Eleve sua marca com um site premium que vende todos os dias.",
-      "subtitle": "A STARKE LOSUNG cria sites de alta performance e campanhas digitais com design elegante, estratégia de SEO e foco em conversão.",
-      "primaryCta": "Solicitar Orçamento",
-      "secondaryCta": "Ver Portfólio",
-      "socialProof": "Marcas no Brasil, Europa e América do Norte confiam no nosso trabalho."
+      "kicker": "STARKE LOSUNG",
+      "title": "Sites de alta conversao que geram leads.",
+      "subtitle": "Sites rapidos, prontos para SEO e anuncios com WhatsApp e e-mail em um clique.",
+      "primaryCta": "Solicitar Orcamento",
+      "secondaryCta": "Ver Portfolio",
+      "socialProof": "Entrega rapida • SEO tecnico • Multi-idioma • Suporte",
+      "rightCardTitle": "Um site feito para crescer",
+      "rightCardSubtitle": "Minimalista, premium e focado em conversao.",
+      "rightCardBullets": [
+        "Carregamento rapido + SEO",
+        "Multi-idioma para clientes internacionais",
+        "Secoes prontas para campanhas"
+      ]
     },
     "trust": {
-      "title": "Empresas que confiam no nosso processo",
-      "items": ["Serviços B2B", "Clínicas Médicas", "Escritórios Jurídicos", "E-commerce", "Educação", "Imobiliário"]
+      "items": [
+        {
+          "icon": "SR",
+          "title": "SEO-ready",
+          "description": "Base tecnica solida desde o primeiro dia."
+        },
+        {
+          "icon": "FL",
+          "title": "Fast loading",
+          "description": "Performance otimizada para converter."
+        },
+        {
+          "icon": "MF",
+          "title": "Mobile-first",
+          "description": "Experiencia excelente em qualquer dispositivo."
+        },
+        {
+          "icon": "IN",
+          "title": "International",
+          "description": "Estrutura com navegacao multi-idioma."
+        }
+      ]
     },
     "services": {
-      "title": "Serviços",
-      "subtitle": "Execução digital completa do planejamento estratégico ao lançamento otimizado.",
+      "title": "Servicos",
+      "subtitle": "Solucoes simples, design premium e resultado real.",
       "cards": [
         {
-          "slug": "criacao-sites-desenvolvimento",
-          "title": "Criação de Sites e Desenvolvimento",
-          "description": "Sites institucionais premium e landing pages focadas em velocidade, SEO e geração de leads."
+          "slug": "landing-pages",
+          "title": "Landing Pages",
+          "description": "Paginas para anuncios com CTA forte, velocidade e conversao."
         },
         {
-          "slug": "seo-estrategia-conteudo",
-          "title": "SEO e Estratégia de Conteúdo",
-          "description": "SEO técnico, arquitetura semântica e planejamento editorial para ranquear com consistência."
+          "slug": "business-websites",
+          "title": "Business Websites",
+          "description": "Presenca profissional para empresas no Brasil e exterior."
         },
         {
-          "slug": "midia-paga-growth",
-          "title": "Mídia Paga e Growth",
-          "description": "Configuração e otimização de campanhas no Google e Meta com indicadores claros."
+          "slug": "seo-performance",
+          "title": "SEO & Performance",
+          "description": "Velocidade, estrutura e melhorias de qualidade para ranquear melhor."
         },
         {
-          "slug": "branding-ux-conversao",
-          "title": "Branding e UX de Conversão",
-          "description": "Identidade visual e experiência de navegação para aumentar confiança e taxa de conversão."
+          "slug": "maintenance-growth",
+          "title": "Maintenance & Growth",
+          "description": "Suporte continuo, evolucao e novas secoes quando necessario."
         }
       ]
     },
@@ -65,144 +96,184 @@
       "title": "Por que STARKE LOSUNG",
       "blocks": [
         {
-          "title": "Acabamento Premium",
-          "description": "Design minimalista elegante com percepção de alto valor."
+          "title": "Design premium minimalista",
+          "description": "Interface limpa e elegante alinhada ao posicionamento da sua marca."
         },
         {
-          "title": "Foco em Negócio",
-          "description": "Cada página é pensada para crescimento, leads e receita."
+          "title": "SEO tecnico nativo",
+          "description": "Metadata, sitemap e estrutura pronta para indexacao desde o inicio."
         },
         {
-          "title": "Entrega Ágil",
-          "description": "Processo enxuto com marcos claros e evolução semanal."
+          "title": "Estrutura pronta para anuncios",
+          "description": "CTAs claros, secoes de campanha e layout focado em conversao."
         },
         {
-          "title": "Parceria Contínua",
-          "description": "Suporte, otimização e evolução de campanhas após o lançamento."
+          "title": "Multi-idioma real",
+          "description": "Conteudo PT/EN com troca simples e expansao futura."
         }
       ]
     },
     "process": {
-      "title": "Processo",
+      "title": "Como funciona",
       "steps": [
-        { "title": "Diagnóstico", "description": "Objetivos, posicionamento e contexto do mercado." },
-        { "title": "Arquitetura", "description": "Wireframes, estrutura de conteúdo e mapa SEO." },
-        { "title": "Construção", "description": "Interface premium, copy e implementação de conversão." },
-        { "title": "Lançamento e Escala", "description": "Publicação, analytics e melhorias contínuas." }
+        {
+          "title": "Strategy",
+          "description": "Alinhamos objetivos, publico e oferta."
+        },
+        {
+          "title": "Design",
+          "description": "Wireframe + interface premium com clareza."
+        },
+        {
+          "title": "Build",
+          "description": "Next.js, performance, SEO e responsividade."
+        },
+        {
+          "title": "Launch",
+          "description": "Deploy, ajustes finais e checklist tecnico."
+        }
       ]
     },
     "portfolio": {
-      "title": "Portfólio em Destaque",
+      "title": "Projetos / Demos",
       "cards": [
-        { "title": "Clínica Odontológica Premium", "category": "Site Institucional" },
-        { "title": "Escritório Jurídico Corporativo", "category": "Geração de Leads" },
-        { "title": "Fornecedor Industrial", "category": "Plataforma B2B" },
-        { "title": "Estúdio de Estética", "category": "Branding + Landing Page" },
-        { "title": "Construtora", "category": "Site com SEO" },
-        { "title": "Consultoria Executiva", "category": "Funil de Campanha" }
+        {
+          "title": "Clinica Odontologica",
+          "category": "Business"
+        },
+        {
+          "title": "Escritorio Juridico",
+          "category": "Landing Page"
+        },
+        {
+          "title": "Fornecedor Industrial",
+          "category": "SEO"
+        },
+        {
+          "title": "Estudio de Estetica",
+          "category": "Performance"
+        },
+        {
+          "title": "Construtora",
+          "category": "Business"
+        },
+        {
+          "title": "Consultoria",
+          "category": "Landing Page"
+        }
       ]
     },
     "testimonials": {
       "title": "Depoimentos",
       "items": [
         {
-          "name": "Carla M.",
-          "role": "CEO, Grupo de Saúde",
-          "quote": "O novo site nos posicionou em outro nível e aumentou os leads qualificados já no primeiro mês."
+          "name": "Cliente",
+          "role": "Negocio local",
+          "quote": "Entrega rapida e comunicacao muito clara. O site ficou leve e profissional."
         },
         {
-          "name": "Daniel R.",
-          "role": "Sócio, Escritório Jurídico",
-          "quote": "Processo profissional, comunicação clara e qualidade final excelente."
+          "name": "Parceiro",
+          "role": "Marketing",
+          "quote": "Estrutura pronta para anuncios e SEO desde o inicio. Qualidade acima da media."
         },
         {
-          "name": "Olivia S.",
-          "role": "Gerente de Marketing",
-          "quote": "Design, performance e SEO vieram juntos de uma forma que não tínhamos visto em outras agências."
+          "name": "Cliente",
+          "role": "Servicos",
+          "quote": "Visual premium e experiencia mobile excelente. A conversao de leads ficou mais facil."
         }
       ]
     },
     "faq": {
-      "title": "Perguntas Frequentes",
+      "title": "FAQ",
       "items": [
         {
-          "question": "Quanto tempo leva um projeto?",
-          "answer": "A maioria dos sites institucionais fica pronta entre 2 e 6 semanas, conforme escopo."
+          "question": "Quanto tempo leva?",
+          "answer": "Depende do escopo. Landing pages sao mais rapidas; sites empresariais exigem mais etapas."
         },
         {
-          "question": "Vocês oferecem suporte mensal?",
-          "answer": "Sim. Temos planos de manutenção, SEO e otimização de mídia."
+          "question": "SEO esta incluso?",
+          "answer": "Sim. Incluimos SEO tecnico, sitemap, metadata, OpenGraph e boas praticas de performance."
         },
         {
-          "question": "Atendem em inglês e português?",
-          "answer": "Sim. O time está preparado para entrega bilíngue e sites multilíngues."
+          "question": "Posso usar para anuncios?",
+          "answer": "Sim. O layout e focado em conversao, com CTAs e secoes de campanha."
         },
         {
-          "question": "Vocês só fazem site novo?",
-          "answer": "Não. Também reformulamos sites existentes e melhoramos SEO técnico e conversão."
+          "question": "Funciona internacionalmente?",
+          "answer": "Sim. O projeto comeca com PT/EN e ja fica pronto para crescer em novos idiomas."
         }
       ]
     },
-    "midCtaButton": "Falar com Especialista",
-    "finalCtaButton": "Solicitar Diagnóstico Estratégico",
+    "midCtaButton": "Falar com especialista",
+    "finalCtaButton": "Solicitar chamada estrategica",
     "contactTitle": "Contato STARKE LOSUNG",
-    "contactSubtitle": "Conte seu objetivo e retornamos com plano claro, prazo e faixa de investimento."
+    "contactSubtitle": "Resposta rapida. Envie seu projeto e receba proximos passos com prazo e faixa de investimento."
   },
   "pages": {
     "services": {
-      "title": "Serviços",
-      "subtitle": "Soluções digitais de alto valor para expandir seu negócio no online."
+      "title": "Servicos",
+      "subtitle": "Solucoes simples, design premium e execucao tecnica."
     },
     "portfolio": {
-      "title": "Portfólio",
-      "subtitle": "Uma curadoria de projetos recentes."
+      "title": "Portfolio",
+      "subtitle": "Alguns exemplos de estrutura, estilo e entrega."
     },
     "pricing": {
-      "title": "Preços",
-      "subtitle": "Planos flexíveis para cada estágio de crescimento."
+      "title": "Precos",
+      "subtitle": "Pacotes simples com ajuste conforme sua necessidade.",
+      "cardDescription": "Escopo ajustado aos seus objetivos com cronograma e entregas claras.",
+      "cta": "Solicitar proposta"
     },
     "about": {
       "title": "Sobre",
-      "subtitle": "Um time focado em execução digital premium com resultados mensuráveis."
+      "subtitle": "Sites em nivel internacional com foco em performance e resultado.",
+      "visionTitle": "Nossa visao",
+      "visionBody": "Combinamos estetica premium e engenharia digital para construir marcas fortes no online.",
+      "methodTitle": "Nosso metodo",
+      "methodBody": "Diagnostico, planejamento, execucao e melhoria continua com metricas transparentes."
     },
     "contact": {
       "title": "Contato",
-      "subtitle": "Solicite seu orçamento e receba um diagnóstico estratégico."
+      "subtitle": "Solicite seu orcamento e receba um plano claro de entrega."
     },
     "privacy": {
-      "title": "Política de Privacidade",
-      "subtitle": "Coletamos apenas os dados necessários para prestar serviços e suporte."
+      "title": "Politica de Privacidade",
+      "subtitle": "Coletamos somente os dados necessarios para responder seu contato.",
+      "body1": "Usamos os dados enviados no formulario apenas para responder solicitacoes comerciais e tecnicas.",
+      "body2": "Voce pode solicitar atualizacao ou exclusao de dados pelo nosso email de contato."
     },
     "terms": {
       "title": "Termos de Uso",
-      "subtitle": "Ao usar este site, você concorda com nossos termos de serviço e uso."
+      "subtitle": "Ao usar este site, voce concorda com nossos termos de servico.",
+      "body1": "Os servicos sao executados conforme proposta aprovada, com prazos e entregas acordados entre as partes.",
+      "body2": "Ao usar este site, voce concorda com estes termos e com nossa politica de privacidade."
     }
   },
   "contactForm": {
-    "name": "Nome",
-    "email": "E-mail",
-    "country": "País",
-    "siteType": "Tipo de Site",
-    "selectType": "Selecione uma opção",
-    "typeInstitutional": "Site Institucional",
-    "typeLanding": "Landing Page",
-    "typeEcommerce": "E-commerce",
-    "typeCustom": "Projeto Personalizado",
-    "message": "Mensagem",
-    "turnstile": "Token do Cloudflare Turnstile",
-    "submit": "Enviar Mensagem",
+    "name": "Seu nome",
+    "email": "Seu e-mail",
+    "country": "Pais",
+    "projectType": "Tipo de projeto",
+    "selectType": "Selecione uma opcao",
+    "typeInstitutional": "Site empresarial",
+    "typeLanding": "Landing page",
+    "typeEcommerce": "SEO & performance",
+    "typeCustom": "Manutencao / growth",
+    "message": "Descreva o que voce precisa",
+    "turnstile": "Token do Cloudflare Turnstile (placeholder)",
+    "submit": "Enviar",
     "sending": "Enviando...",
-    "success": "Mensagem enviada com sucesso. Em breve entraremos em contato.",
-    "error": "Não foi possível enviar sua mensagem. Tente novamente."
+    "success": "Mensagem enviada. Vamos responder em breve.",
+    "error": "Nao foi possivel enviar agora. Tente novamente ou use WhatsApp."
   },
   "footer": {
-    "tagline": "Sites premium e divulgação digital para empresas modernas.",
-    "linksTitle": "Navegação",
+    "tagline": "Sites premium e divulgacao digital para empresas modernas.",
+    "linksTitle": "Navegacao",
     "contactTitle": "Contato",
     "socialTitle": "Redes",
-    "services": "Serviços",
-    "portfolio": "Portfólio",
-    "pricing": "Preços",
+    "services": "Servicos",
+    "portfolio": "Portfolio",
+    "pricing": "Precos",
     "about": "Sobre",
     "privacy": "Privacidade",
     "terms": "Termos",

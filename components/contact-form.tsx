@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { FormEvent, useState } from "react";
 import { useTranslations } from "next-intl";
@@ -65,13 +65,13 @@ export function ContactForm({ locale, compact = false, turnstileSiteKey }: Props
           <input name="country" required className="rounded-lg border border-white/20 bg-graphite-800 px-3 py-2" />
         </label>
         <label className="grid gap-2 text-sm text-silver-200">
-          {t("siteType")}
-          <select name="siteType" required className="rounded-lg border border-white/20 bg-graphite-800 px-3 py-2">
+          {t("projectType")}
+          <select name="projectType" required className="rounded-lg border border-white/20 bg-graphite-800 px-3 py-2">
             <option value="">{t("selectType")}</option>
             <option value="institutional">{t("typeInstitutional")}</option>
             <option value="landing">{t("typeLanding")}</option>
-            <option value="ecommerce">{t("typeEcommerce")}</option>
-            <option value="custom">{t("typeCustom")}</option>
+            <option value="seo">{t("typeEcommerce")}</option>
+            <option value="maintenance">{t("typeCustom")}</option>
           </select>
         </label>
       </div>

@@ -4,8 +4,12 @@
     "language": "Language",
     "languageLabel": "Language selector",
     "ctaQuote": "Get a Quote",
-    "ctaEmail": "Email Us",
+    "ctaEmail": "Email",
     "ctaWhatsApp": "Chat on WhatsApp",
+    "learnMore": "Learn more",
+    "viewMore": "View more",
+    "backToTop": "Back to top",
+    "loading": "Loading",
     "nav": {
       "home": "Home",
       "services": "Services",
@@ -18,46 +22,73 @@
     }
   },
   "topbar": {
-    "international": "International agency: websites, SEO and digital campaigns in Portuguese and English.",
-    "emailCta": "contact by e-mail"
+    "international": "Serving Brazil, USA, Canada & Europe",
+    "emailCta": "contact by email"
   },
   "home": {
     "campaignPrefix": "Campaign",
     "hero": {
-      "kicker": "Premium Website & Growth Agency",
-      "title": "Elevate your brand with a premium website that sells every day.",
-      "subtitle": "STARKE LOSUNG creates high-performance websites and digital campaigns with elegant design, SEO strategy and conversion-focused architecture.",
+      "kicker": "STARKE LOSUNG",
+      "title": "High-converting websites that generate leads.",
+      "subtitle": "Fast, SEO-ready websites built for ads with WhatsApp and email in one click.",
       "primaryCta": "Get a Quote",
       "secondaryCta": "View Portfolio",
-      "socialProof": "Trusted by brands in Brazil, Europe and North America."
+      "socialProof": "Fast delivery • Technical SEO • Multi-language • Support",
+      "rightCardTitle": "A website built to grow",
+      "rightCardSubtitle": "Minimal, premium and conversion-focused.",
+      "rightCardBullets": [
+        "Fast loading + SEO",
+        "Multi-language for international clients",
+        "Campaign-ready sections"
+      ]
     },
     "trust": {
-      "title": "Trusted by fast-growing companies",
-      "items": ["B2B Services", "Medical Clinics", "Law Firms", "E-commerce", "Education", "Real Estate"]
+      "items": [
+        {
+          "icon": "SR",
+          "title": "SEO-ready",
+          "description": "Solid technical foundations from day one."
+        },
+        {
+          "icon": "FL",
+          "title": "Fast loading",
+          "description": "Optimized performance to convert."
+        },
+        {
+          "icon": "MF",
+          "title": "Mobile-first",
+          "description": "Great experience on every device."
+        },
+        {
+          "icon": "IN",
+          "title": "International",
+          "description": "Built with multi-language navigation."
+        }
+      ]
     },
     "services": {
       "title": "Services",
-      "subtitle": "Complete digital execution from strategic planning to optimized launch.",
+      "subtitle": "Simple solutions, premium design, real outcomes.",
       "cards": [
         {
-          "slug": "website-design-development",
-          "title": "Website Design & Development",
-          "description": "Premium institutional websites and landing pages focused on speed, SEO and lead generation."
+          "slug": "landing-pages",
+          "title": "Landing Pages",
+          "description": "Ad-focused pages with strong CTAs, speed and conversion."
         },
         {
-          "slug": "seo-content-strategy",
-          "title": "SEO & Content Strategy",
-          "description": "Technical SEO, semantic architecture and content planning to rank with consistency."
+          "slug": "business-websites",
+          "title": "Business Websites",
+          "description": "Professional presence for companies in Brazil and abroad."
         },
         {
-          "slug": "paid-media-growth",
-          "title": "Paid Media & Growth",
-          "description": "Campaign setup and optimization on Google and Meta with clear KPI dashboards."
+          "slug": "seo-performance",
+          "title": "SEO & Performance",
+          "description": "Speed, structure and quality improvements to rank better."
         },
         {
-          "slug": "branding-conversion-ux",
-          "title": "Branding & Conversion UX",
-          "description": "Visual identity and user experience systems that increase trust and conversion."
+          "slug": "maintenance-growth",
+          "title": "Maintenance & Growth",
+          "description": "Ongoing support, improvements and new sections when needed."
         }
       ]
     },
@@ -65,60 +96,90 @@
       "title": "Why STARKE LOSUNG",
       "blocks": [
         {
-          "title": "Premium Craft",
-          "description": "Elegant minimal design with high perceived value."
+          "title": "Premium minimal design",
+          "description": "Clean and elegant UI aligned with your brand positioning."
         },
         {
-          "title": "Business Focus",
-          "description": "Every page is built for growth, leads and revenue."
+          "title": "Built-in technical SEO",
+          "description": "Metadata, sitemap and indexing-ready structure from day one."
         },
         {
-          "title": "Fast Delivery",
-          "description": "Lean process with clear milestones and weekly updates."
+          "title": "Ads-ready structure",
+          "description": "Clear CTAs, campaign sections and conversion-first layout."
         },
         {
-          "title": "Long-term Partner",
-          "description": "Support, optimization and campaign evolution after launch."
+          "title": "Real multi-language",
+          "description": "PT/EN content with easy switching and future expansion."
         }
       ]
     },
     "process": {
-      "title": "Process",
+      "title": "How it works",
       "steps": [
-        { "title": "Discovery", "description": "Goals, positioning and market context." },
-        { "title": "Architecture", "description": "Wireframes, content structure and SEO map." },
-        { "title": "Build", "description": "Premium interface, copy and conversion implementation." },
-        { "title": "Launch & Scale", "description": "Go-live, analytics and iterative improvements." }
+        {
+          "title": "Strategy",
+          "description": "We align on your goals, audience and offer."
+        },
+        {
+          "title": "Design",
+          "description": "Wireframe + premium UI focused on clarity."
+        },
+        {
+          "title": "Build",
+          "description": "Next.js, performance, SEO and responsiveness."
+        },
+        {
+          "title": "Launch",
+          "description": "Deploy, final tweaks and technical checklist."
+        }
       ]
     },
     "portfolio": {
-      "title": "Selected Portfolio",
+      "title": "Work / Demos",
       "cards": [
-        { "title": "Luxury Dental Clinic", "category": "Institutional Website" },
-        { "title": "Corporate Legal Firm", "category": "Lead Generation" },
-        { "title": "Industrial Supplier", "category": "B2B Platform" },
-        { "title": "Aesthetic Studio", "category": "Branding + Landing Page" },
-        { "title": "Construction Company", "category": "SEO Website" },
-        { "title": "Consulting Agency", "category": "Campaign Funnel" }
+        {
+          "title": "Dental Clinic",
+          "category": "Business"
+        },
+        {
+          "title": "Law Firm",
+          "category": "Landing Page"
+        },
+        {
+          "title": "Industrial Supplier",
+          "category": "SEO"
+        },
+        {
+          "title": "Aesthetic Studio",
+          "category": "Performance"
+        },
+        {
+          "title": "Construction Company",
+          "category": "Business"
+        },
+        {
+          "title": "Consulting Agency",
+          "category": "Landing Page"
+        }
       ]
     },
     "testimonials": {
       "title": "Testimonials",
       "items": [
         {
-          "name": "Carla M.",
-          "role": "CEO, Health Group",
-          "quote": "The new website positioned us at another level and increased qualified leads in the first month."
+          "name": "Client",
+          "role": "Local business",
+          "quote": "Fast delivery and very clear communication. The site feels light and professional."
         },
         {
-          "name": "Daniel R.",
-          "role": "Partner, Law Office",
-          "quote": "Professional process, clear communication and excellent final quality."
+          "name": "Partner",
+          "role": "Marketing",
+          "quote": "Ads-ready structure and SEO from the start. Way above average quality."
         },
         {
-          "name": "Olivia S.",
-          "role": "Marketing Manager",
-          "quote": "Design, performance and SEO came together in a way we had not seen with previous agencies."
+          "name": "Client",
+          "role": "Services",
+          "quote": "Premium look and excellent mobile experience. Lead conversion became easier."
         }
       ]
     },
@@ -126,74 +187,84 @@
       "title": "FAQ",
       "items": [
         {
-          "question": "How long does a project take?",
-          "answer": "Most institutional websites are delivered in 2 to 6 weeks depending on scope."
+          "question": "How long does it take?",
+          "answer": "It depends on scope. Landing pages are faster; business websites involve more steps."
         },
         {
-          "question": "Do you offer monthly support?",
-          "answer": "Yes. We offer maintenance, SEO and media optimization retainers."
+          "question": "Is SEO included?",
+          "answer": "Yes. We include technical SEO, sitemap, metadata, OpenGraph and performance best practices."
         },
         {
-          "question": "Can you work in English and Portuguese?",
-          "answer": "Yes. The team is prepared for bilingual delivery and multilingual websites."
+          "question": "Can I use it for ads?",
+          "answer": "Yes. The layout is built for conversion, with CTAs, campaign sections and ad-focused pages."
         },
         {
-          "question": "Do you only build new websites?",
-          "answer": "No. We can redesign existing websites and improve technical SEO and conversion."
+          "question": "Does it work internationally?",
+          "answer": "Yes. The project starts with PT/EN and is ready to expand to more languages."
         }
       ]
     },
     "midCtaButton": "Talk to a Specialist",
     "finalCtaButton": "Request a Strategic Call",
     "contactTitle": "Contact STARKE LOSUNG",
-    "contactSubtitle": "Tell us your goal and we will return with a clear plan, timeline and investment range."
+    "contactSubtitle": "Fast response. Share your project and receive next steps with timeline and budget range."
   },
   "pages": {
     "services": {
       "title": "Services",
-      "subtitle": "High-value digital solutions to grow your business online."
+      "subtitle": "Simple solutions, premium design and technical execution."
     },
     "portfolio": {
       "title": "Portfolio",
-      "subtitle": "A curated selection of recent projects."
+      "subtitle": "A few examples of structure, style and delivery."
     },
     "pricing": {
       "title": "Pricing",
-      "subtitle": "Flexible plans for each growth stage."
+      "subtitle": "Simple packages. We can tailor them to your needs.",
+      "cardDescription": "Scope tailored to your goals with a clear roadmap and deliverables.",
+      "cta": "Request proposal"
     },
     "about": {
       "title": "About",
-      "subtitle": "A team focused on premium digital execution with measurable results."
+      "subtitle": "International-level websites focused on performance and outcomes.",
+      "visionTitle": "Our vision",
+      "visionBody": "Combine premium aesthetics and digital engineering to build strong online brands.",
+      "methodTitle": "Our method",
+      "methodBody": "Discovery, planning, execution and continuous optimization with transparent metrics."
     },
     "contact": {
       "title": "Contact",
-      "subtitle": "Request your quote and receive a strategic diagnosis."
+      "subtitle": "Request your quote and receive a clear delivery plan."
     },
     "privacy": {
       "title": "Privacy Policy",
-      "subtitle": "We collect only the data necessary to deliver our services and support."
+      "subtitle": "We collect only the data required to respond and support your request.",
+      "body1": "We use data submitted through forms only to respond to commercial and technical requests.",
+      "body2": "You can request data updates or deletion at any time through our contact email."
     },
     "terms": {
       "title": "Terms of Service",
-      "subtitle": "By using this website, you agree to our service and usage terms."
+      "subtitle": "By using this website, you agree with our service terms.",
+      "body1": "Services are executed according to the approved proposal, with timelines and deliverables agreed by both parties.",
+      "body2": "Using this website implies agreement with these terms and our privacy policy."
     }
   },
   "contactForm": {
-    "name": "Name",
-    "email": "Email",
+    "name": "Your name",
+    "email": "Your email",
     "country": "Country",
-    "siteType": "Website Type",
+    "projectType": "Project type",
     "selectType": "Select an option",
-    "typeInstitutional": "Institutional Website",
-    "typeLanding": "Landing Page",
-    "typeEcommerce": "E-commerce",
-    "typeCustom": "Custom Project",
-    "message": "Message",
-    "turnstile": "Cloudflare Turnstile token",
-    "submit": "Send Message",
+    "typeInstitutional": "Business website",
+    "typeLanding": "Landing page",
+    "typeEcommerce": "SEO & performance",
+    "typeCustom": "Maintenance / growth",
+    "message": "Describe what you need",
+    "turnstile": "Cloudflare Turnstile token (placeholder)",
+    "submit": "Send",
     "sending": "Sending...",
-    "success": "Message sent successfully. We will contact you shortly.",
-    "error": "Could not send your message. Please try again."
+    "success": "Message sent. We will reply soon.",
+    "error": "Could not send now. Please try again or use WhatsApp."
   },
   "footer": {
     "tagline": "Premium websites and digital promotion for modern businesses.",

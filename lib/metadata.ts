@@ -1,29 +1,28 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import type { SupportedLocale } from "@/site.config";
 import { siteConfig } from "@/site.config";
 
 const pageData = {
   home: {
     en: {
-      title: "STARKE LOSUNG | Premium Websites & Digital Growth",
+      title: "STARKE LOSUNG | High-converting websites that generate leads",
       description:
-        "Professional website design, SEO and digital promotion for companies that want premium positioning and measurable growth."
+        "Premium, fast, SEO-ready websites built for ads. Multi-language and one-click contact via WhatsApp and email."
     },
     "pt-BR": {
-      title: "STARKE LOSUNG | Sites Premium e Divulgação Digital",
+      title: "STARKE LOSUNG | Sites premium que geram leads",
       description:
-        "Criação profissional de sites, SEO e divulgação digital para empresas que querem posicionamento premium e crescimento real."
+        "Sites premium, rapidos e prontos para SEO e anuncios. Multi-idioma com contato em um clique por WhatsApp e email."
     }
   },
   services: {
     en: {
       title: "Services | STARKE LOSUNG",
-      description: "Website creation, branding, SEO and paid media strategies."
+      description: "Landing pages, business websites and SEO/performance services."
     },
     "pt-BR": {
-      title: "Serviços | STARKE LOSUNG",
-      description:
-        "Criação de sites, branding, SEO e estratégias de mídia paga."
+      title: "Servicos | STARKE LOSUNG",
+      description: "Landing pages, sites empresariais e servicos de SEO/performance."
     }
   },
   portfolio: {
@@ -32,40 +31,38 @@ const pageData = {
       description: "Selected projects in web design and digital campaigns."
     },
     "pt-BR": {
-      title: "Portfólio | STARKE LOSUNG",
-      description:
-        "Projetos selecionados em design de sites e campanhas digitais."
+      title: "Portfolio | STARKE LOSUNG",
+      description: "Projetos selecionados em design de sites e campanhas digitais."
     }
   },
   pricing: {
     en: {
       title: "Pricing | STARKE LOSUNG",
-      description: "Transparent plans for websites, campaigns and support."
+      description: "Simple packages tailored to your business stage."
     },
     "pt-BR": {
-      title: "Preços | STARKE LOSUNG",
-      description:
-        "Planos transparentes para sites, campanhas e suporte contínuo."
+      title: "Precos | STARKE LOSUNG",
+      description: "Pacotes simples com customizacao por escopo e objetivos."
     }
   },
   about: {
     en: {
       title: "About | STARKE LOSUNG",
-      description: "Meet our team and methodology."
+      description: "International-level websites focused on performance and outcomes."
     },
     "pt-BR": {
       title: "Sobre | STARKE LOSUNG",
-      description: "Conheça nosso time e nossa metodologia de entrega."
+      description: "Sites em nivel internacional com foco em performance e resultado."
     }
   },
   contact: {
     en: {
       title: "Contact | STARKE LOSUNG",
-      description: "Request a quote and talk to our specialists."
+      description: "Request a quote and get a clear delivery plan."
     },
     "pt-BR": {
       title: "Contato | STARKE LOSUNG",
-      description: "Solicite um orçamento e fale com nossos especialistas."
+      description: "Solicite um orcamento e receba um plano claro de entrega."
     }
   },
   privacy: {
@@ -74,7 +71,7 @@ const pageData = {
       description: "How we process and protect your data."
     },
     "pt-BR": {
-      title: "Política de Privacidade | STARKE LOSUNG",
+      title: "Politica de Privacidade | STARKE LOSUNG",
       description: "Como tratamos e protegemos seus dados."
     }
   },
@@ -85,7 +82,7 @@ const pageData = {
     },
     "pt-BR": {
       title: "Termos de Uso | STARKE LOSUNG",
-      description: "Termos que regem o uso do nosso site e serviços."
+      description: "Termos que regem o uso do nosso site e servicos."
     }
   }
 } as const;
@@ -94,22 +91,23 @@ export type PageKey = keyof typeof pageData;
 
 export function getPageMetadata(locale: SupportedLocale, page: PageKey): Metadata {
   const data = pageData[page][locale];
-  const alternates = {
-    canonical: `/${locale === "en" ? "en" : "pt-BR"}${page === "home" ? "" : `/${page}`}`,
-    languages: {
-      en: `/en${page === "home" ? "" : `/${page}`}`,
-      "pt-BR": `/pt-BR${page === "home" ? "" : `/${page}`}`
-    }
-  };
+  const suffix = page === "home" ? "" : `/${page}`;
+  const canonicalPath = `/${locale}${suffix}`;
 
   return {
     title: data.title,
     description: data.description,
-    alternates,
+    alternates: {
+      canonical: canonicalPath,
+      languages: {
+        en: `/en${suffix}`,
+        "pt-BR": `/pt-BR${suffix}`
+      }
+    },
     openGraph: {
       title: data.title,
       description: data.description,
-      url: `${siteConfig.defaultUrl}/${locale}${page === "home" ? "" : `/${page}`}`,
+      url: `${siteConfig.defaultUrl}${canonicalPath}`,
       siteName: siteConfig.name,
       locale,
       type: "website"
