@@ -19,7 +19,10 @@
       "contact": "Contato",
       "privacy": "Privacidade",
       "terms": "Termos"
-    }
+    },
+    "switchMode": "Alternar modo visual",
+    "modeStandard": "Standard",
+    "modePremium": "Premium"
   },
   "topbar": {
     "international": "Atendemos Brasil, EUA, Canada e Europa",
@@ -207,7 +210,12 @@
     "midCtaButton": "Falar com especialista",
     "finalCtaButton": "Solicitar chamada estrategica",
     "contactTitle": "Contato STARKE LOSUNG",
-    "contactSubtitle": "Resposta rapida. Envie seu projeto e receba proximos passos com prazo e faixa de investimento."
+    "contactSubtitle": "Resposta rapida. Envie seu projeto e receba proximos passos com prazo e faixa de investimento.",
+    "caseStudy": {
+      "title": "Resultados com design premium e foco em lead",
+      "description": "Estrutura com CTA direto e SEO tecnico para apoiar campanhas e gerar conversao consistente.",
+      "label": "Case em destaque"
+    }
   },
   "pages": {
     "services": {
@@ -222,7 +230,8 @@
       "title": "Precos",
       "subtitle": "Pacotes simples com ajuste conforme sua necessidade.",
       "cardDescription": "Escopo ajustado aos seus objetivos com cronograma e entregas claras.",
-      "cta": "Solicitar proposta"
+      "cta": "Solicitar proposta",
+      "mostPopular": "Mais popular"
     },
     "about": {
       "title": "Sobre",
