@@ -19,7 +19,10 @@
       "contact": "Contact",
       "privacy": "Privacy",
       "terms": "Terms"
-    }
+    },
+    "switchMode": "Switch visual mode",
+    "modeStandard": "Standard",
+    "modePremium": "Premium"
   },
   "topbar": {
     "international": "Serving Brazil, USA, Canada & Europe",
@@ -207,7 +210,12 @@
     "midCtaButton": "Talk to a Specialist",
     "finalCtaButton": "Request a Strategic Call",
     "contactTitle": "Contact STARKE LOSUNG",
-    "contactSubtitle": "Fast response. Share your project and receive next steps with timeline and budget range."
+    "contactSubtitle": "Fast response. Share your project and receive next steps with timeline and budget range.",
+    "caseStudy": {
+      "title": "Results with premium design and lead-focused UX",
+      "description": "Structure with direct CTA and technical SEO designed to support campaigns and consistent conversion.",
+      "label": "Case study highlight"
+    }
   },
   "pages": {
     "services": {
@@ -222,7 +230,8 @@
       "title": "Pricing",
       "subtitle": "Simple packages. We can tailor them to your needs.",
       "cardDescription": "Scope tailored to your goals with a clear roadmap and deliverables.",
-      "cta": "Request proposal"
+      "cta": "Request proposal",
+      "mostPopular": "Most Popular"
     },
     "about": {
       "title": "About",
