@@ -28,7 +28,8 @@ type Props = {
 function persistMode(mode: SiteMode) {
   document.documentElement.setAttribute("data-mode", mode);
   localStorage.setItem("site-mode", mode);
-  document.cookie = `SITE_MODE=${mode}; path=/; max-age=31536000`;
+  const secure = window.location.protocol === "https:" ? "; Secure" : "";
+  document.cookie = `SITE_MODE=${mode}; path=/; max-age=31536000; SameSite=Lax${secure}`;
 }
 
 export function SiteModeProvider({ children, initialMode }: Props) {
