@@ -3,18 +3,30 @@ import { z } from "zod";
 import { Resend } from "resend";
 
 const bodySchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  country: z.string().min(2),
-  projectType: z.string().min(2),
-  message: z.string().min(10),
+  name: z.string().min(2).max(100),
+  email: z.string().email().max(254),
+  country: z.string().min(2).max(100),
+  projectType: z.string().min(2).max(100),
+  message: z.string().min(10).max(5000),
   locale: z.enum(["en", "pt-BR"]).default("en"),
-  turnstileToken: z.string().optional()
+  turnstileToken: z.string().max(2048).optional()
 });
 
 const limiter = new Map<string, { count: number; resetAt: number }>();
 const RATE_WINDOW_MS = 60_000;
 const RATE_MAX_REQUESTS = 5;
+
+const LIMITER_PRUNE_THRESHOLD = 500;
+
+function pruneExpiredEntries() {
+  if (limiter.size < LIMITER_PRUNE_THRESHOLD) return;
+  const now = Date.now();
+  for (const [ip, entry] of limiter) {
+    if (entry.resetAt < now) {
+      limiter.delete(ip);
+    }
+  }
+}
 
 function getClientIp(request: Request) {
   const forwarded = request.headers.get("x-forwarded-for");
@@ -25,6 +37,7 @@ function getClientIp(request: Request) {
 }
 
 function checkRateLimit(ip: string) {
+  pruneExpiredEntries();
   const now = Date.now();
   const current = limiter.get(ip);
 
