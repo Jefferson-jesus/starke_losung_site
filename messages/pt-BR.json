@@ -25,24 +25,24 @@
     "modePremium": "Premium"
   },
   "topbar": {
-    "international": "Atendemos Brasil, EUA, Canada e Europa",
+    "international": "Sistemas e sites para o Brasil, EUA e Europa",
     "emailCta": "contato por email"
   },
   "home": {
     "campaignPrefix": "Campanha",
     "hero": {
       "kicker": "STARKE LOSUNG",
-      "title": "Sites de alta conversao que geram leads.",
-      "subtitle": "Sites rapidos, prontos para SEO e anuncios com WhatsApp e e-mail em um clique.",
-      "primaryCta": "Solicitar Orcamento",
-      "secondaryCta": "Ver Portfolio",
+      "title": "Sistemas e sites para o seu negócio crescer.",
+      "subtitle": "Desenvolvemos sistemas sob medida, aplicações web e sites profissionais. Atendimento remoto para empresas no Brasil e no exterior.",
+      "primaryCta": "Solicitar orçamento",
+      "secondaryCta": "Ver modelos",
       "socialProof": "Entrega rapida • SEO tecnico • Multi-idioma • Suporte",
-      "rightCardTitle": "Um site feito para crescer",
-      "rightCardSubtitle": "Minimalista, premium e focado em conversao.",
+      "rightCardTitle": "Tecnologia para o seu negócio",
+      "rightCardSubtitle": "Sistemas úteis e sites rápidos, com foco nos seus objetivos.",
       "rightCardBullets": [
-        "Carregamento rapido + SEO",
-        "Multi-idioma para clientes internacionais",
-        "Secoes prontas para campanhas"
+        "Sistemas sob medida e integrações",
+        "Sites rápidos e adaptados ao celular",
+        "Atendimento em português e inglês"
       ]
     },
     "trust": {
@@ -71,8 +71,13 @@
     },
     "services": {
       "title": "Servicos",
-      "subtitle": "Solucoes simples, design premium e resultado real.",
+      "subtitle": "Desenvolvimento de sistemas e sites, do planejamento à publicação.",
       "cards": [
+        {
+          "slug": "custom-software",
+          "title": "Sistemas sob medida",
+          "description": "Aplicações web, painéis e integrações adaptados aos processos da sua empresa."
+        },
         {
           "slug": "landing-pages",
           "title": "Landing Pages",
@@ -138,7 +143,7 @@
       ]
     },
     "portfolio": {
-      "title": "Projetos / Demos",
+      "title": "Modelos de sites",
       "cards": [
         {
           "title": "Clinica Odontologica",
@@ -210,7 +215,7 @@
     "midCtaButton": "Falar com especialista",
     "finalCtaButton": "Solicitar chamada estrategica",
     "contactTitle": "Contato STARKE LOSUNG",
-    "contactSubtitle": "Resposta rapida. Envie seu projeto e receba proximos passos com prazo e faixa de investimento.",
+    "contactSubtitle": "Conte o que precisa e continue no WhatsApp para conversar sobre escopo, prazo e orçamento.",
     "caseStudy": {
       "title": "Resultados com design premium e foco em lead",
       "description": "Estrutura com CTA direto e SEO tecnico para apoiar campanhas e gerar conversao consistente.",
@@ -220,36 +225,40 @@
   "pages": {
     "services": {
       "title": "Servicos",
-      "subtitle": "Solucoes simples, design premium e execucao tecnica."
+      "subtitle": "Desenvolvimento de sistemas e sites, do planejamento à publicação."
     },
     "portfolio": {
       "title": "Portfolio",
-      "subtitle": "Alguns exemplos de estrutura, estilo e entrega."
+      "subtitle": "Modelos demonstrativos de estrutura e estilo. Não representam projetos entregues a clientes."
     },
     "pricing": {
-      "title": "Precos",
-      "subtitle": "Pacotes simples com ajuste conforme sua necessidade.",
+      "title": "Orçamentos",
+      "subtitle": "O valor é definido conforme escopo, integrações e prazo. Propostas para clientes no Brasil e no exterior.",
       "cardDescription": "Escopo ajustado aos seus objetivos com cronograma e entregas claras.",
       "cta": "Solicitar proposta",
-      "mostPopular": "Mais popular"
+      "mostPopular": "Mais popular",
+      "customQuote": "Sob orçamento",
+      "landingDescription": "Página para apresentar uma oferta, serviço ou campanha, com contato direto pelo WhatsApp.",
+      "businessDescription": "Site empresarial com páginas de serviços, apresentação da empresa e formulário de orçamento.",
+      "softwareDescription": "Sistema sob medida com funcionalidades, integrações e etapas definidas após o levantamento de requisitos."
     },
     "about": {
       "title": "Sobre",
-      "subtitle": "Sites em nivel internacional com foco em performance e resultado.",
+      "subtitle": "Prestação de serviços de desenvolvimento de sistemas e sites para empresas no Brasil e no exterior.",
       "visionTitle": "Nossa visao",
-      "visionBody": "Combinamos estetica premium e engenharia digital para construir marcas fortes no online.",
+      "visionBody": "Criar sistemas que simplificam processos e sites que apresentam sua empresa com clareza.",
       "methodTitle": "Nosso metodo",
       "methodBody": "Diagnostico, planejamento, execucao e melhoria continua com metricas transparentes."
     },
     "contact": {
       "title": "Contato",
-      "subtitle": "Solicite seu orcamento e receba um plano claro de entrega."
+      "subtitle": "Descreva seu projeto de sistema ou site e envie sua solicitação pelo WhatsApp."
     },
     "privacy": {
-      "title": "Politica de Privacidade",
-      "subtitle": "Coletamos somente os dados necessarios para responder seu contato.",
-      "body1": "Usamos os dados enviados no formulario apenas para responder solicitacoes comerciais e tecnicas.",
-      "body2": "Voce pode solicitar atualizacao ou exclusao de dados pelo nosso email de contato."
+      "title": "Política de privacidade",
+      "subtitle": "Saiba como os dados do seu contato são utilizados.",
+      "body1": "Os campos do formulário são organizados no seu navegador e usados para abrir uma mensagem no WhatsApp. O site não envia esses campos a uma API de contato nem armazena seu conteúdo em um banco de dados. O envio acontece quando você confirma a mensagem no WhatsApp, sujeito também às políticas desse serviço.",
+      "body2": "Usamos os dados recebidos pelo WhatsApp ou e-mail para responder e preparar propostas. O site guarda preferências de idioma e aparência no navegador; a hospedagem pode processar registros técnicos de acesso. Para solicitar informações, atualização ou exclusão dos dados compartilhados conosco, use o e-mail de contato."
     },
     "terms": {
       "title": "Termos de Uso",
@@ -261,22 +270,23 @@
   "contactForm": {
     "name": "Seu nome",
     "email": "Seu e-mail",
-    "country": "Pais",
+    "country": "País",
     "projectType": "Tipo de projeto",
-    "selectType": "Selecione uma opcao",
+    "selectType": "Selecione uma opção",
     "typeInstitutional": "Site empresarial",
     "typeLanding": "Landing page",
     "typeEcommerce": "SEO & performance",
-    "typeCustom": "Manutencao / growth",
-    "message": "Descreva o que voce precisa",
-    "turnstile": "Token do Cloudflare Turnstile (placeholder)",
-    "submit": "Enviar",
-    "sending": "Enviando...",
-    "success": "Mensagem enviada. Vamos responder em breve.",
-    "error": "Nao foi possivel enviar agora. Tente novamente ou use WhatsApp."
+    "typeCustom": "Manutenção e suporte",
+    "message": "Descreva o que você precisa",
+    "submit": "Continuar no WhatsApp",
+    "error": "Não foi possível abrir o WhatsApp. Use o botão de contato direto ou o e-mail ao lado.",
+    "typeSystem": "Sistema sob medida / aplicação web",
+    "whatsappHint": "O WhatsApp será aberto com os dados preenchidos. Revise a mensagem e toque em enviar para solicitar seu orçamento.",
+    "privacyNotice": "Seus dados serão usados para responder à sua solicitação.",
+    "privacyLink": "Política de privacidade"
   },
   "footer": {
-    "tagline": "Sites premium e divulgacao digital para empresas modernas.",
+    "tagline": "Desenvolvimento de sistemas e sites para empresas no Brasil e no exterior.",
     "linksTitle": "Navegacao",
     "contactTitle": "Contato",
     "socialTitle": "Redes",

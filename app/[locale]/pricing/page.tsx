@@ -10,7 +10,7 @@ type Props = {
 
 type PricingPlan = {
   key: string;
-  value: string;
+  descriptionKey: string;
   popular?: boolean;
 };
 
@@ -20,9 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const plans: PricingPlan[] = [
-  { key: "Starter", value: "$900+" },
-  { key: "Business", value: "$1,900+", popular: true },
-  { key: "Premium", value: "$3,400+" }
+  { key: "Landing Page", descriptionKey: "landingDescription" },
+  { key: "Business", descriptionKey: "businessDescription", popular: true },
+  { key: "Custom Software", descriptionKey: "softwareDescription" }
 ];
 
 export default async function PricingPage({ params }: Props) {
@@ -45,9 +45,9 @@ export default async function PricingPage({ params }: Props) {
                 {t("mostPopular")}
               </span>
             )}
-            <h2 className="text-xl font-semibold text-[var(--color-fg)]">{plan.key}</h2>
-            <p className="mt-3 text-3xl font-semibold text-metal">{plan.value}</p>
-            <p className="mt-4 text-sm text-[var(--color-muted)]">{t("cardDescription")}</p>
+            <h2 className="text-xl font-semibold text-[var(--color-fg)]">{plan.key === "Custom Software" && locale === "pt-BR" ? "Sistemas sob medida" : plan.key}</h2>
+            <p className="mt-3 text-3xl font-semibold text-metal">{t("customQuote")}</p>
+            <p className="mt-4 text-sm text-[var(--color-muted)]">{t(plan.descriptionKey)}</p>
             <Link
               href="/contact"
               className="mt-5 inline-block rounded-full border border-[var(--color-border)] px-5 py-2 text-sm text-[var(--color-fg)]"

@@ -43,7 +43,7 @@ export default async function ContactPage({ params }: Props) {
             {common("ctaEmail")}
           </a>
         </div>
-        <ContactForm locale={locale} turnstileSiteKey={process.env.TURNSTILE_SITE_KEY} />
+        <ContactForm locale={locale} whatsappNumber={siteConfig.whatsappNumber} />
       </section>
     </>
   );

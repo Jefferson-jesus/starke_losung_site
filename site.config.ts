@@ -6,13 +6,13 @@
   mode: {
     default: (process.env.NEXT_PUBLIC_SITE_MODE === "premium" ? "premium" : "standard") as "standard" | "premium",
     showToggle:
-      process.env.NEXT_PUBLIC_SHOW_MODE_TOGGLE === "true" || process.env.VERCEL_ENV !== "production",
+      process.env.NEXT_PUBLIC_SHOW_MODE_TOGGLE === "true" || process.env.NODE_ENV !== "production",
     showProcessInStandard: true
   },
   campaignBanner: {
     enabled: true,
-    text_pt: "Oferta mensal: Landing page premium + WhatsApp + SEO tecnico inicial.",
-    text_en: "Monthly deal: Premium landing page + WhatsApp + initial technical SEO.",
+    text_pt: "Desenvolvimento de sistemas e sites. Solicite uma proposta para o seu projeto.",
+    text_en: "Software and website development. Request a proposal for your project.",
     link: "/pricing"
   },
   midCta: {
@@ -26,10 +26,11 @@
     text_en: "Let's build a website that turns visitors into clients."
   },
   social: {
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com",
-    facebook: "https://facebook.com"
-  }
+    instagram: process.env.SOCIAL_INSTAGRAM_URL || "",
+    linkedin: process.env.SOCIAL_LINKEDIN_URL || "",
+    facebook: process.env.SOCIAL_FACEBOOK_URL || ""
+  },
+  content: { showTestimonials: false, showCaseStudy: false }
 };
 
 export type SupportedLocale = "en" | "pt-BR";

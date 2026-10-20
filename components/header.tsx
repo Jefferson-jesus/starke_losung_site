@@ -29,14 +29,14 @@ export function Header({ showModeToggle = false }: Props) {
       <div className="section-shell flex h-20 items-center justify-between gap-3">
         <Link href="/" className="group flex items-center gap-3">
           <Image src="/logo-mark.svg" alt="STARKE LOSUNG logo" width={36} height={36} />
-          <span className="text-sm font-semibold tracking-[0.25em] text-[var(--color-fg)] transition group-hover:tracking-[0.28em]">
+          <span className="text-xs font-semibold tracking-[0.16em] text-[var(--color-fg)] transition sm:text-sm sm:tracking-[0.25em]">
             STARKE LOSUNG
           </span>
         </Link>
 
         <button
           type="button"
-          className="rounded border border-[var(--color-border)] px-3 py-2 text-xs text-[var(--color-fg)] md:hidden"
+          className="rounded border border-[var(--color-border)] px-3 py-2 text-xs text-[var(--color-fg)] xl:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -44,7 +44,7 @@ export function Header({ showModeToggle = false }: Props) {
           {t("menu")}
         </button>
 
-        <nav className="hidden items-center gap-5 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-5 xl:flex" aria-label="Main navigation">
           {links.map((item) => (
             <Link
               key={item.href}
@@ -66,9 +66,9 @@ export function Header({ showModeToggle = false }: Props) {
       </div>
 
       {open && (
-        <nav id="mobile-menu" className="section-shell grid gap-4 border-t border-[var(--color-border)] py-4 md:hidden">
+        <nav id="mobile-menu" className="section-shell grid gap-4 border-t border-[var(--color-border)] py-4 xl:hidden">
           {links.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm text-[var(--color-muted)]">
+            <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="text-sm text-[var(--color-muted)]">
               {t(`nav.${item.key}`)}
             </Link>
           ))}

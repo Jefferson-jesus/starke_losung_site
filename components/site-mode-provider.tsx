@@ -1,88 +1,46 @@
-﻿"use client";
+"use client";
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode
-} from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { resolveSiteMode, type SiteMode } from "@/lib/site-mode";
 
-type SiteModeContextValue = {
-  mode: SiteMode;
-  setMode: (nextMode: SiteMode) => void;
-  toggleMode: () => void;
-};
-
+type SiteModeContextValue = { mode: SiteMode; setMode: (mode: SiteMode) => void; toggleMode: () => void };
 const SiteModeContext = createContext<SiteModeContextValue | null>(null);
 
-type Props = {
-  children: ReactNode;
-  initialMode: SiteMode;
-};
-
 function persistMode(mode: SiteMode) {
-  document.documentElement.setAttribute("data-mode", mode);
-  localStorage.setItem("site-mode", mode);
-  const secure = window.location.protocol === "https:" ? "; Secure" : "";
-  document.cookie = `SITE_MODE=${mode}; path=/; max-age=31536000; SameSite=Lax${secure}`;
+  document.documentElement.dataset.mode = mode;
+  try { localStorage.setItem("site-mode", mode); } catch { /* The mode also works without storage. */ }
 }
 
-export function SiteModeProvider({ children, initialMode }: Props) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+export function SiteModeProvider({ children, initialMode }: { children: ReactNode; initialMode: SiteMode }) {
   const [mode, setModeState] = useState<SiteMode>(initialMode);
-
-  const setMode = useCallback(
-    (nextMode: SiteMode) => {
-      setModeState(nextMode);
-      persistMode(nextMode);
-
-      const params = new URLSearchParams(searchParams.toString());
-      params.set("mode", nextMode);
-      const query = params.toString();
-      router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
-    },
-    [pathname, router, searchParams]
-  );
-
-  const toggleMode = useCallback(() => {
-    setMode(mode === "premium" ? "standard" : "premium");
-  }, [mode, setMode]);
+  const setMode = useCallback((nextMode: SiteMode) => {
+    persistMode(nextMode);
+    setModeState(nextMode);
+    const url = new URL(window.location.href);
+    url.searchParams.set("mode", nextMode);
+    // Visual changes need no server request or React Server Component refresh.
+    window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+  }, []);
 
   useEffect(() => {
-    const queryMode = resolveSiteMode(searchParams.get("mode"));
-    const storedMode = resolveSiteMode(localStorage.getItem("site-mode"));
-    const selected = queryMode || storedMode || initialMode;
-
-    if (selected !== mode) {
+    function syncMode() {
+      const queryMode = resolveSiteMode(new URLSearchParams(window.location.search).get("mode"));
+      const selected = queryMode || resolveSiteMode(document.documentElement.dataset.mode) || initialMode;
+      persistMode(selected);
       setModeState(selected);
     }
+    syncMode();
+    window.addEventListener("popstate", syncMode);
+    return () => window.removeEventListener("popstate", syncMode);
+  }, [initialMode]);
 
-    persistMode(selected);
-  }, [initialMode, mode, searchParams]);
-
-  const value = useMemo(
-    () => ({
-      mode,
-      setMode,
-      toggleMode
-    }),
-    [mode, setMode, toggleMode]
-  );
-
+  const toggleMode = useCallback(() => setMode(mode === "premium" ? "standard" : "premium"), [mode, setMode]);
+  const value = useMemo(() => ({ mode, setMode, toggleMode }), [mode, setMode, toggleMode]);
   return <SiteModeContext.Provider value={value}>{children}</SiteModeContext.Provider>;
 }
 
 export function useSiteMode() {
   const context = useContext(SiteModeContext);
-  if (!context) {
-    throw new Error("useSiteMode must be used within SiteModeProvider");
-  }
+  if (!context) throw new Error("useSiteMode must be used within SiteModeProvider");
   return context;
 }

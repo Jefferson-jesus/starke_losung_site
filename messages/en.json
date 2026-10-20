@@ -25,24 +25,24 @@
     "modePremium": "Premium"
   },
   "topbar": {
-    "international": "Serving Brazil, USA, Canada & Europe",
+    "international": "Software and websites for Brazil, the USA and Europe",
     "emailCta": "contact by email"
   },
   "home": {
     "campaignPrefix": "Campaign",
     "hero": {
       "kicker": "STARKE LOSUNG",
-      "title": "High-converting websites that generate leads.",
-      "subtitle": "Fast, SEO-ready websites built for ads with WhatsApp and email in one click.",
+      "title": "Custom software and websites built for your business.",
+      "subtitle": "We build custom software, web applications and professional websites. Remote services for businesses in Brazil and worldwide.",
       "primaryCta": "Get a Quote",
       "secondaryCta": "View Portfolio",
       "socialProof": "Fast delivery • Technical SEO • Multi-language • Support",
-      "rightCardTitle": "A website built to grow",
-      "rightCardSubtitle": "Minimal, premium and conversion-focused.",
+      "rightCardTitle": "Technology for your business",
+      "rightCardSubtitle": "Practical software and fast websites focused on your goals.",
       "rightCardBullets": [
-        "Fast loading + SEO",
-        "Multi-language for international clients",
-        "Campaign-ready sections"
+        "Custom software and integrations",
+        "Fast, mobile-friendly websites",
+        "Service in English and Portuguese"
       ]
     },
     "trust": {
@@ -71,8 +71,13 @@
     },
     "services": {
       "title": "Services",
-      "subtitle": "Simple solutions, premium design, real outcomes.",
+      "subtitle": "Software and website development, from planning to launch.",
       "cards": [
+        {
+          "slug": "custom-software",
+          "title": "Custom Software",
+          "description": "Web applications, dashboards and integrations tailored to your business workflows."
+        },
         {
           "slug": "landing-pages",
           "title": "Landing Pages",
@@ -138,7 +143,7 @@
       ]
     },
     "portfolio": {
-      "title": "Work / Demos",
+      "title": "Website Demos",
       "cards": [
         {
           "title": "Dental Clinic",
@@ -210,7 +215,7 @@
     "midCtaButton": "Talk to a Specialist",
     "finalCtaButton": "Request a Strategic Call",
     "contactTitle": "Contact STARKE LOSUNG",
-    "contactSubtitle": "Fast response. Share your project and receive next steps with timeline and budget range.",
+    "contactSubtitle": "Tell us what you need and continue on WhatsApp to discuss scope, timing and a quote.",
     "caseStudy": {
       "title": "Results with premium design and lead-focused UX",
       "description": "Structure with direct CTA and technical SEO designed to support campaigns and consistent conversion.",
@@ -220,36 +225,40 @@
   "pages": {
     "services": {
       "title": "Services",
-      "subtitle": "Simple solutions, premium design and technical execution."
+      "subtitle": "Software and website development, from planning to launch."
     },
     "portfolio": {
       "title": "Portfolio",
-      "subtitle": "A few examples of structure, style and delivery."
+      "subtitle": "Demonstration layouts and styles. These are not completed client projects."
     },
     "pricing": {
       "title": "Pricing",
-      "subtitle": "Simple packages. We can tailor them to your needs.",
+      "subtitle": "Pricing depends on scope, integrations and timeline. Proposals for clients in Brazil and worldwide.",
       "cardDescription": "Scope tailored to your goals with a clear roadmap and deliverables.",
       "cta": "Request proposal",
-      "mostPopular": "Most Popular"
+      "mostPopular": "Most Popular",
+      "customQuote": "Custom quote",
+      "landingDescription": "A focused page for an offer, service or campaign, with direct WhatsApp contact.",
+      "businessDescription": "A business website with service pages, company information and a quote form.",
+      "softwareDescription": "Custom software with features, integrations and delivery stages defined after requirements discovery."
     },
     "about": {
       "title": "About",
-      "subtitle": "International-level websites focused on performance and outcomes.",
+      "subtitle": "Software and website development services for businesses in Brazil and worldwide.",
       "visionTitle": "Our vision",
-      "visionBody": "Combine premium aesthetics and digital engineering to build strong online brands.",
+      "visionBody": "Build software that simplifies workflows and websites that clearly present your business.",
       "methodTitle": "Our method",
       "methodBody": "Discovery, planning, execution and continuous optimization with transparent metrics."
     },
     "contact": {
       "title": "Contact",
-      "subtitle": "Request your quote and receive a clear delivery plan."
+      "subtitle": "Describe your software or website project and send your request on WhatsApp."
     },
     "privacy": {
       "title": "Privacy Policy",
       "subtitle": "We collect only the data required to respond and support your request.",
-      "body1": "We use data submitted through forms only to respond to commercial and technical requests.",
-      "body2": "You can request data updates or deletion at any time through our contact email."
+      "body1": "Form fields are assembled in your browser to open a WhatsApp message. The website does not submit these fields to a contact API or store their contents in a database. Delivery takes place when you confirm the message in WhatsApp, subject to that service's policies.",
+      "body2": "We use details received by WhatsApp or email to respond and prepare proposals. The website stores language and appearance preferences in your browser; the hosting provider may process technical access logs. To request information, updates or deletion of details shared with us, use our contact email."
     },
     "terms": {
       "title": "Terms of Service",
@@ -269,14 +278,15 @@
     "typeEcommerce": "SEO & performance",
     "typeCustom": "Maintenance / growth",
     "message": "Describe what you need",
-    "turnstile": "Cloudflare Turnstile token (placeholder)",
-    "submit": "Send",
-    "sending": "Sending...",
-    "success": "Message sent. We will reply soon.",
-    "error": "Could not send now. Please try again or use WhatsApp."
+    "submit": "Continue on WhatsApp",
+    "error": "Could not open WhatsApp. Please use the direct contact button or email beside this form.",
+    "typeSystem": "Custom software / web application",
+    "whatsappHint": "WhatsApp will open with your details filled in. Review the message and tap send to request your quote.",
+    "privacyNotice": "Your details will be used to respond to your request.",
+    "privacyLink": "Privacy policy"
   },
   "footer": {
-    "tagline": "Premium websites and digital promotion for modern businesses.",
+    "tagline": "Software and website development for businesses in Brazil and worldwide.",
     "linksTitle": "Navigation",
     "contactTitle": "Contact",
     "socialTitle": "Social",

@@ -146,3 +146,11 @@ html[data-mode="premium"] .mode-standard {
 .animate-fade-up {
   animation: fade-up 0.6s var(--ease-elegant) both;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

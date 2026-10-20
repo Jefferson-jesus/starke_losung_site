@@ -1,10 +1,9 @@
 ﻿import type { MetadataRoute } from "next";
 import { siteConfig } from "@/site.config";
+import { isIndexable } from "@/lib/indexing";
 
 export default function robots(): MetadataRoute.Robots {
-  const isProduction = process.env.VERCEL_ENV === "production";
-
-  if (!isProduction) {
+  if (!isIndexable) {
     return {
       rules: {
         userAgent: "*",

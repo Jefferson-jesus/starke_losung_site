@@ -9,9 +9,10 @@ import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { LocaleSync } from "@/components/locale-sync";
 import { getWhatsAppUrl } from "@/lib/locale";
 import { siteConfig } from "@/site.config";
-import { SITE_MODE_COOKIE, resolveSiteMode } from "@/lib/site-mode";
-import { cookies } from "next/headers";
 import { SiteModeProvider } from "@/components/site-mode-provider";
+import { RootDocument, rootMetadata } from "./root-document";
+
+export const metadata = rootMetadata;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -33,8 +34,6 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
   const typedLocale = locale as "en" | "pt-BR";
   const whatsappUrl = getWhatsAppUrl(typedLocale);
-  const cookieStore = await cookies();
-  const initialMode = resolveSiteMode(cookieStore.get(SITE_MODE_COOKIE)?.value) || siteConfig.mode.default;
 
   const schema = {
     "@context": "https://schema.org",
@@ -44,7 +43,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         name: siteConfig.name,
         url: siteConfig.defaultUrl,
         email: siteConfig.contactEmail,
-        sameAs: [siteConfig.social.instagram, siteConfig.social.linkedin, siteConfig.social.facebook],
+        sameAs: Object.values(siteConfig.social).filter(Boolean),
         contactPoint: [
           {
             "@type": "ContactPoint",
@@ -60,34 +59,28 @@ export default async function LocaleLayout({ children, params }: Props) {
             availableLanguage: ["English", "Portuguese"]
           }
         ]
-      },
-      {
-        "@type": "LocalBusiness",
-        name: siteConfig.name,
-        url: siteConfig.defaultUrl,
-        email: siteConfig.contactEmail,
-        telephone: siteConfig.whatsappNumber,
-        description:
-          typedLocale === "pt-BR"
-            ? "Agencia de criacao de sites e divulgacao digital."
-            : "Website creation and digital growth agency."
       }
     ]
   };
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      <SiteModeProvider initialMode={initialMode}>
+    <RootDocument locale={typedLocale}>
+    <NextIntlClientProvider locale={typedLocale} messages={{ common: messages.common, contactForm: messages.contactForm }}>
+      <SiteModeProvider initialMode={siteConfig.mode.default}>
         <LocaleSync locale={typedLocale} />
         <div className="min-h-screen bg-[var(--gradient-bg)] transition-colors duration-[var(--motion-slow)] ease-[var(--ease-elegant)]">
           <TopBar />
           <Header showModeToggle={siteConfig.mode.showToggle} />
-          <main>{children}</main>
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:bg-graphite-900 focus:p-4">
+            {typedLocale === "pt-BR" ? "Ir para o conteúdo" : "Skip to content"}
+          </a>
+          <main id="main-content">{children}</main>
           <Footer whatsappUrl={whatsappUrl} showModeToggle={siteConfig.mode.showToggle} />
           <WhatsAppFloat href={whatsappUrl} label="WhatsApp" />
         </div>
       </SiteModeProvider>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
     </NextIntlClientProvider>
+    </RootDocument>
   );
 }

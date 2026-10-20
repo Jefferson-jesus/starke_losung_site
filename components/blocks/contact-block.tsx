@@ -8,7 +8,7 @@ type Props = {
   emailLabel: string;
   email: string;
   locale: "en" | "pt-BR";
-  turnstileSiteKey?: string;
+  whatsappNumber: string;
 };
 
 export function ContactBlock({
@@ -19,7 +19,7 @@ export function ContactBlock({
   emailLabel,
   email,
   locale,
-  turnstileSiteKey
+  whatsappNumber
 }: Props) {
   return (
     <section id="contact" className="block-shell grid gap-8 pb-24 md:grid-cols-[1fr,1.2fr]">
@@ -43,7 +43,7 @@ export function ContactBlock({
           </a>
         </div>
       </div>
-      <ContactForm locale={locale} compact turnstileSiteKey={turnstileSiteKey} />
+      <ContactForm locale={locale} compact whatsappNumber={whatsappNumber} />
     </section>
   );
 }

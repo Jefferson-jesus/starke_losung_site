@@ -10,9 +10,7 @@ export function LanguageSwitcher() {
   const router = useRouter();
 
   function onChange(nextLocale: string) {
-    localStorage.setItem("preferred-locale", nextLocale);
-    document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000`;
-    router.replace(pathname, { locale: nextLocale });
+    router.replace(`${pathname}${window.location.search}${window.location.hash}`, { locale: nextLocale });
   }
 
   return (

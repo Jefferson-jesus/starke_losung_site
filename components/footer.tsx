@@ -37,18 +37,12 @@ export function Footer({ whatsappUrl, showModeToggle = false }: Props) {
             WhatsApp
           </a>
         </div>
-        <div className="space-y-3">
+        {Object.values(siteConfig.social).some(Boolean) && <div className="space-y-3">
           <h2 className="text-sm font-semibold uppercase text-[var(--color-fg)]">{t("socialTitle")}</h2>
-          <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" className="block text-sm text-[var(--color-muted)]">
-            Instagram
-          </a>
-          <a href={siteConfig.social.linkedin} target="_blank" rel="noreferrer" className="block text-sm text-[var(--color-muted)]">
-            LinkedIn
-          </a>
-          <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer" className="block text-sm text-[var(--color-muted)]">
-            Facebook
-          </a>
-        </div>
+          {Object.entries(siteConfig.social).filter(([, href]) => href).map(([name, href]) => (
+            <a key={name} href={href} target="_blank" rel="noreferrer" className="block text-sm capitalize text-[var(--color-muted)]">{name}</a>
+          ))}
+        </div>}
       </div>
       <div className="section-shell flex flex-wrap items-center justify-between gap-3 border-t border-[var(--color-border)] py-5 text-xs text-[var(--color-muted)]">
         <p>{t("copyright", { year: new Date().getFullYear() })}</p>

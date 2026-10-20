@@ -98,14 +98,14 @@ export default async function HomePage({ params }: Props) {
 
       <PortfolioGrid title={t("portfolio.title")} cards={portfolioCards} />
 
-      <CaseStudyHighlight
+      {siteConfig.content.showCaseStudy && <CaseStudyHighlight
         label={t("caseStudy.label")}
         title={t("caseStudy.title")}
         description={t("caseStudy.description")}
         cta={common("viewMore")}
-      />
+      />}
 
-      <TestimonialsBlock title={t("testimonials.title")} items={testimonials} />
+      {siteConfig.content.showTestimonials && <TestimonialsBlock title={t("testimonials.title")} items={testimonials} />}
 
       <FaqBlock title={t("faq.title")} items={faqItems} />
 
@@ -119,7 +119,7 @@ export default async function HomePage({ params }: Props) {
         emailLabel={common("ctaEmail")}
         email={siteConfig.contactEmail}
         locale={locale}
-        turnstileSiteKey={process.env.TURNSTILE_SITE_KEY}
+        whatsappNumber={siteConfig.whatsappNumber}
       />
     </>
   );

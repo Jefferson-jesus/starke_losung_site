@@ -7,6 +7,18 @@
 
 export const services: ServiceItem[] = [
   {
+    slug: "custom-software",
+    title: { en: "Custom Software", "pt-BR": "Sistemas sob medida" },
+    summary: {
+      en: "Web applications, dashboards and integrations tailored to your business workflows.",
+      "pt-BR": "Aplicações web, painéis e integrações adaptados aos processos da sua empresa."
+    },
+    content: {
+      en: "Development services for business software, internal tools and web applications. Features, integrations, delivery stages and support are defined in a proposal after requirements discovery.",
+      "pt-BR": "Prestação de serviços para desenvolver sistemas de gestão, ferramentas internas e aplicações web. Funcionalidades, integrações, etapas de entrega e suporte são definidos em proposta após o levantamento de requisitos."
+    }
+  },
+  {
     slug: "landing-pages",
     title: {
       en: "Landing Pages",

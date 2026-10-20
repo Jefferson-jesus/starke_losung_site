@@ -5,24 +5,24 @@ import { siteConfig } from "@/site.config";
 const pageData = {
   home: {
     en: {
-      title: "STARKE LOSUNG | High-converting websites that generate leads",
+      title: "STARKE LOSUNG | Custom software and website development",
       description:
-        "Premium, fast, SEO-ready websites built for ads. Multi-language and one-click contact via WhatsApp and email."
+        "Software and website development services for Brazil, the USA and Europe. Custom web applications, business websites and integrations."
     },
     "pt-BR": {
-      title: "STARKE LOSUNG | Sites premium que geram leads",
+      title: "STARKE LOSUNG | Desenvolvimento de sistemas e sites",
       description:
-        "Sites premium, rapidos e prontos para SEO e anuncios. Multi-idioma com contato em um clique por WhatsApp e email."
+        "Prestação de serviços de desenvolvimento de sistemas e sites para o Brasil e exterior. Aplicações web, sites empresariais e integrações sob medida."
     }
   },
   services: {
     en: {
       title: "Services | STARKE LOSUNG",
-      description: "Landing pages, business websites and SEO/performance services."
+      description: "Custom software, web applications, business websites and SEO/performance services."
     },
     "pt-BR": {
       title: "Servicos | STARKE LOSUNG",
-      description: "Landing pages, sites empresariais e servicos de SEO/performance."
+      description: "Sistemas sob medida, aplicações web, sites empresariais e serviços de SEO e performance."
     }
   },
   portfolio: {
@@ -101,7 +101,8 @@ export function getPageMetadata(locale: SupportedLocale, page: PageKey): Metadat
       canonical: canonicalPath,
       languages: {
         en: `/en${suffix}`,
-        "pt-BR": `/pt-BR${suffix}`
+        "pt-BR": `/pt-BR${suffix}`,
+        "x-default": `/en${suffix}`
       }
     },
     openGraph: {
@@ -109,7 +110,8 @@ export function getPageMetadata(locale: SupportedLocale, page: PageKey): Metadat
       description: data.description,
       url: `${siteConfig.defaultUrl}${canonicalPath}`,
       siteName: siteConfig.name,
-      locale,
+      locale: locale === "pt-BR" ? "pt_BR" : "en_US",
+      alternateLocale: locale === "pt-BR" ? ["en_US"] : ["pt_BR"],
       type: "website"
     },
     twitter: {

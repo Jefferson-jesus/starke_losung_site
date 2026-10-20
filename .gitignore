@@ -8,3 +8,6 @@ yarn-error.log*
 pnpm-debug.log*
 dist
 tsconfig.tsbuildinfo
+.npm-cache
+.env.*
+!.env.example
