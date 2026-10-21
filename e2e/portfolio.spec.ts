@@ -1,4 +1,54 @@
 import { expect, test } from "@playwright/test";
+import { siteConfig } from "../site.config";
+
+for (const locale of ["pt-BR", "en"]) {
+  for (const route of ["", "/portfolio"]) {
+    test(`${locale}${route || "/"} shows one published project and three working demo cards`, async ({ page }) => {
+      await page.goto(`/${locale}${route}`);
+      const cards = page.getByRole("article").filter({ has: page.getByRole("heading", { name: /JRD Soluções e Manutenções|Atlas Consulting|Forma Studio|FlowDesk/, exact: true }) });
+      await expect(cards).toHaveCount(4);
+      await expect(cards.getByText(locale === "pt-BR" ? "Projeto publicado" : "Published project", { exact: true })).toHaveCount(1);
+      await expect(cards.getByText(locale === "pt-BR" ? "Demonstração autoral" : "Original demo", { exact: true })).toHaveCount(3);
+      const jrd = cards.filter({ has: page.getByRole("heading", { name: "JRD Soluções e Manutenções", exact: true }) }).getByRole("link");
+      await expect(jrd).toHaveAttribute("href", "https://www.jrdsolucoesemanutencoes.com.br/");
+      await expect(jrd).toHaveAttribute("target", "_blank");
+      await expect(jrd).toHaveAttribute("rel", /noopener/);
+      for (const [name, slug] of [["Atlas Consulting", "atlas-consulting"], ["Forma Studio", "forma-studio"], ["FlowDesk", "flowdesk"]]) {
+        const link = cards.filter({ has: page.getByRole("heading", { name, exact: true }) }).getByRole("link");
+        await expect(link).toHaveAttribute("href", `/${locale}/demos/${slug}`);
+      }
+      for (const img of await cards.getByRole("img").all()) {
+        await img.scrollIntoViewIfNeeded();
+        await expect(img).toHaveAttribute("alt", /.+/);
+        await expect.poll(() => img.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(true);
+      }
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    });
+  }
+  for (const [name, slug] of [["Atlas Consulting", "atlas-consulting"], ["Forma Studio", "forma-studio"], ["FlowDesk", "flowdesk"]]) {
+    test(`${locale} ${name} keeps localized contact, keyboard return and isolated colors`, async ({ page }) => {
+      await page.goto(`/${locale}/demos/${slug}?mode=standard`);
+      const colors = () => page.getByRole("main").evaluate(el => ({ foreground: getComputedStyle(el).color, background: getComputedStyle(el).backgroundColor }));
+      const standard = await colors();
+      await page.goto(`/${locale}/demos/${slug}?mode=premium`);
+      expect(await colors()).toEqual(standard);
+      const ctas = page.locator('a[href^="https://wa.me/"]');
+      expect(await ctas.count()).toBeGreaterThan(0);
+      for (const cta of await ctas.all()) {
+        const url = new URL((await cta.getAttribute("href"))!);
+        expect(url.pathname).toBe(`/${siteConfig.whatsappNumber.replace(/\D/g, "")}`);
+        const message = url.searchParams.get("text")!;
+        expect(message).toContain(name);
+        expect(message).toContain(locale === "pt-BR" ? "Gostaria de um orçamento" : "I'd like a quote");
+      }
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+      const back = page.getByRole("link", { name: locale === "pt-BR" ? "Voltar ao portfólio" : "Back to portfolio" });
+      await back.focus();
+      await page.keyboard.press("Enter");
+      await expect(page).toHaveURL(new RegExp(`/${locale}/portfolio$`));
+    });
+  }
+}
 
 test("Forma filters conceptual projects and restores them with keyboard access", async ({ page }) => {
   await page.goto("/pt-BR/demos/forma-studio");
@@ -30,7 +80,8 @@ test("Forma filters conceptual projects and restores them with keyboard access",
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   for (const img of await projects.getByRole("img").all()) {
     await expect(img).toHaveAttribute("alt", /.+/);
-    expect(await img.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(true);
+    await img.scrollIntoViewIfNeeded();
+    await expect.poll(() => img.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(true);
   }
   await page.screenshot({ path: test.info().outputPath("forma-gallery.png"), fullPage: true });
 });

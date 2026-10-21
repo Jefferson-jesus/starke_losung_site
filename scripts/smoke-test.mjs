@@ -17,6 +17,17 @@ for (const locale of ["en", "pt-BR"]) {
     }
     count++;
   }
+  for (const slug of ["atlas-consulting", "forma-studio", "flowdesk"]) {
+    const path = `/${locale}/demos/${slug}`;
+    const response = await fetch(`${base}${path}`);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    assert.ok(html.includes(`lang="${locale}"`), `Demo language: ${path}`);
+    assert.ok(html.includes("<h1"), `Demo heading: ${path}`);
+    assert.match(html, /<meta name="robots" content="[^"]*noindex/, `Demo noindex: ${path}`);
+    count++;
+  }
+  assert.equal((await fetch(`${base}/${locale}/demos/unknown-demo`)).status, 404);
 }
 for (const [language, expected] of [["pt-BR,pt;q=0.9,en;q=0.8", "/pt-BR"], ["en-US,en;q=0.9", "/en"]]) {
   const response = await fetch(base, { redirect: "manual", headers: { "accept-language": language } });
@@ -26,6 +37,7 @@ for (const [language, expected] of [["pt-BR,pt;q=0.9,en;q=0.8", "/pt-BR"], ["en-
 const sitemap = await (await fetch(`${base}/sitemap.xml`)).text();
 assert.ok(sitemap.includes("/en/services/custom-software"));
 assert.ok(sitemap.includes("/pt-BR/services/maintenance-growth"));
+assert.ok(!sitemap.includes("/demos/"), "Demo routes stay outside the commercial sitemap");
 assert.equal((await fetch(`${base}/en/does-not-exist`)).status, 404);
 assert.equal((await fetch(`${base}/api/contact`, { method: "POST" })).status, 404);
 console.log(`Smoke test passed: ${count} localized pages, root language detection, sitemap and 404 responses.`);

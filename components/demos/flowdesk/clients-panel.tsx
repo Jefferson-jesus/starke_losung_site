@@ -32,9 +32,14 @@ function ClientEditor({ client, onSubmit, onCancel }: { client: DemoClient; onSu
   useEffect(() => {
     const element = dialog.current;
     const opener = document.activeElement as HTMLElement | null;
+    const search = element?.closest("section")?.querySelector<HTMLInputElement>('input[type="search"]');
     element?.showModal();
     element?.querySelector("input")?.focus();
-    return () => { element?.close(); opener?.focus(); };
+    return () => {
+      element?.close();
+      if (opener?.isConnected) opener.focus();
+      else if (search?.isConnected) search.focus();
+    };
   }, []);
   return <dialog ref={dialog} className={styles.dialog} aria-labelledby="client-editor-title" onCancel={event => { event.preventDefault(); onCancel(); }}>
     <form noValidate onSubmit={event => {

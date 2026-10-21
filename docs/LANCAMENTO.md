@@ -1,6 +1,6 @@
 # Prontidão para lançamento — STARKE LOSUNG
 
-Revisão de 20/10/2026. Objetivo: prestar serviços de desenvolvimento de sistemas e sites para empresas no Brasil, EUA, Europa e outros mercados, com atendimento remoto em português e inglês.
+Revisão de 21/10/2026. Objetivo: prestar serviços de desenvolvimento de sistemas e sites para empresas no Brasil, EUA, Europa e outros mercados, com atendimento remoto em português e inglês.
 
 ## Base técnica preparada
 
@@ -10,6 +10,10 @@ Revisão de 20/10/2026. Objetivo: prestar serviços de desenvolvimento de sistem
 - Páginas comerciais geradas no build, fonte local de 48 KB e somente as traduções necessárias aos componentes de cliente enviadas ao navegador.
 - Modo visual aplicado no navegador, sem leitura de cookies que torne as páginas dinâmicas.
 - Propostas por escopo; modelos de portfólio identificados como demonstração; depoimentos e estudos de caso genéricos desativados.
+- Página inicial e portfólio com um projeto publicado (JRD) e três demonstrações autorais, com capturas reais em `public/portfolio/`. JRD abre no domínio externo fornecido; o site externo permanece intacto.
+- Atlas Consulting (`/{locale}/demos/atlas-consulting`), Forma Studio (`/{locale}/demos/forma-studio`) e FlowDesk (`/{locale}/demos/flowdesk`) disponíveis em `pt-BR` e `en`, com retorno ao portfólio, cores próprias, `noindex` e exclusão do sitemap comercial.
+- FlowDesk permite cadastrar/editar clientes e orçamentos, buscar, calcular totais em centavos e alterar status. Os registros são fictícios, locais ao navegador e independentes por idioma (BRL/USD, sem conversão). Restaurar pede confirmação; armazenamento bloqueado mantém a interação só na sessão. Não há API, autenticação ou integração de produção.
+- Solicitação comercial das demos separada dos registros locais: WhatsApp configurado em `site.config.ts`, com referência ao modelo e confirmação do envio pelo visitante.
 - Exportação do template sem configurações privadas, caches ou dependências instaladas.
 
 ## Pendências que precisam de dados reais
@@ -21,7 +25,7 @@ Revisão de 20/10/2026. Objetivo: prestar serviços de desenvolvimento de sistem
 | Antes de publicar | Identificar o prestador | Informar identidade comercial, responsável e meios de contato nos textos aplicáveis |
 | Antes de publicar | Revisar privacidade e condições da prestação de serviço | Textos coerentes com a operação real, fornecedores, retenção de conversas, escopo, suporte e responsabilidades |
 | Antes de anunciar | Validar oferta comercial | Definir escopo, preço, prazo, moeda e forma de pagamento em cada proposta; português ou inglês conforme o cliente |
-| Antes de anunciar | Fortalecer o portfólio | Substituir imagens “Project 01…” por demos completas ou entregas autorizadas, com links e descrição do trabalho |
+| Após publicar | Manter o portfólio atualizado | Conferir a JRD e as três demos; adicionar futuras entregas autorizadas e renovar capturas com `scripts/capture-previews.mjs` |
 | Antes de anunciar | Conferir a experiência publicada | Navegação no celular, formulário, links, contraste, carregamento e nenhum erro no console |
 | Após publicar | Medir desempenho real | Testar PageSpeed/Lighthouse em celular e acompanhar LCP, INP e CLS em tráfego real; o build estático não substitui essa medição |
 | Após publicar | Liberar descoberta | Conferir `robots.txt`, canonical e sitemap no domínio final; cadastrar sitemap no mecanismo de busca escolhido |
@@ -34,12 +38,12 @@ Não há checkout nem conversão automática de moedas. O site inicia uma conver
 
 ## Verificação reproduzível
 
-Execute `npm.cmd run check`, `npm.cmd run build` e, com o servidor em produção aberto, `npm.cmd run smoke`. Execute `npm.cmd audit` para acompanhar os avisos atuais das bibliotecas. Não use `npm audit fix --force` sem revisar as mudanças de versão principal.
+Execute `npm.cmd run check`, `npm.cmd run build` e, com o servidor em produção aberto, `npm.cmd run smoke` e `npm.cmd run test:e2e` com `PLAYWRIGHT_BASE_URL` apontando para esse servidor. A instalação inicial do navegador usa `npx.cmd playwright install chromium`. Execute `npm.cmd audit` para acompanhar os avisos atuais das bibliotecas. Não use `npm audit fix --force` sem revisar as mudanças de versão principal.
 
-Na consulta de 20/10/2026, `npm audit --omit=dev` não reportou vulnerabilidades nas dependências de produção. A auditoria completa ainda reportou 9 avisos (7 altos e 2 moderados) na cadeia de ferramentas de desenvolvimento, incluindo Tailwind 3 e ferramentas de análise. A atualização dessas ferramentas para novas versões principais exige uma migração própria e uma nova validação do CSS e da análise de código.
+Na consulta de 21/10/2026, `npm audit --omit=dev` não reportou vulnerabilidades nas dependências de produção. A auditoria completa ainda reportou 9 avisos (7 altos e 2 moderados) na cadeia de ferramentas de desenvolvimento, incluindo Tailwind 3 e ferramentas de análise. A atualização dessas ferramentas para novas versões principais exige uma migração própria e uma nova validação do CSS e da análise de código.
 
-A validação automatizada do projeto cobre tipos, lint, testes e páginas HTTP da versão de produção. A inspeção visual no navegador e o envio real no aplicativo devem ser realizados no notebook/celular antes dos anúncios.
+A validação automatizada cobre tipos, lint, domínio, catálogo e fluxos de navegador em desktop e 360 px. As capturas de produção foram inspecionadas localmente; a conferência no aparelho físico e o envio real no aplicativo permanecem no checklist antes dos anúncios.
 
-Resultados desta revisão: `npm.cmd run check` passou com 7 testes; `npm.cmd run build` concluiu com 26 páginas localizadas estáticas; o smoke test passou nas 26 páginas, detecção inicial de idioma, sitemap e respostas 404. O ZIP foi conferido com 80 entradas, lockfile atual e sem arquivos privados. As traduções serializadas para componentes cliente passaram de aproximadamente 8,6–8,9 KB para 1,2–1,3 KB por idioma, redução de 86%.
+Resultados desta revisão: `npm.cmd run check` passou com 22 testes, lint e tipos; `npm.cmd run build` gerou 37 páginas, incluindo 26 comerciais e seis demos localizadas estáticas. Em produção, os 50 testes de navegador e o smoke das 32 páginas passaram, incluindo idioma, `noindex`, sitemap e 404. O ZIP foi regenerado e conferido com lockfile idêntico ao atual e sem arquivos privados, caches ou evidências de navegador. As traduções de FlowDesk permanecem restritas à sua rota.
 
 Para encerrar o lançamento, conclua os itens da tabela no ambiente publicado, incluindo o teste real do atendimento e o domínio definitivo.

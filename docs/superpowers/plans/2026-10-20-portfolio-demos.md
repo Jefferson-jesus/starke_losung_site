@@ -1,6 +1,6 @@
 # Portfolio and Interactive Demos Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Publicar no portfólio o trabalho real da JRD e três demonstrações autorais funcionais para vender desenvolvimento de sistemas e sites.
 
@@ -53,7 +53,7 @@
 
 **Interfaces:** Produce `type PortfolioProjectId = "jrd" | "atlas-consulting" | "forma-studio" | "flowdesk"`; `type PortfolioProject = { id: PortfolioProjectId; kind: "live" | "demo"; title: string; description: string; category: string; href: string; image: string; imageAlt: string; external: boolean }`; `getPortfolioProjects(locale: SupportedLocale): PortfolioProject[]`. `PortfolioGrid` receives `{ title, subtitle?, projects, labels: { live, demo, visit, explore } }` and is consumed by both marketing pages.
 
-- [ ] Write the failing catalog test with independent literal expectations:
+- [x] Write the failing catalog test with independent literal expectations:
 
 ```js
 const projects = getPortfolioProjects('pt-BR');
@@ -64,11 +64,11 @@ assert.equal(projects.find(p => p.id === 'flowdesk').href, '/pt-BR/demos/flowdes
 assert.equal(getPortfolioProjects('en').find(p => p.id === 'atlas-consulting').href, '/en/demos/atlas-consulting');
 ```
 
-- [ ] Run `node --test tests/portfolio.test.cjs`; verify it fails for the absent catalog.
-- [ ] Implement the catalog with JRD first and the three demo destinations from the spec; replace numbered-image cards with the shared component, kind badge, description and real links. Use Next locale-aware links consistently: internal catalog URLs are already locale-prefixed and must not receive another prefix. External links use `noopener noreferrer`.
-- [ ] Update heading and subtitle to “Projetos e demonstrações” / “Projects and demos”; remove the blanket statement that every item is fictitious. Derive descriptions from the actual project type without fabricated results.
-- [ ] Run `node --test tests/portfolio.test.cjs` and `npm.cmd run check`; expected all tests and checks pass.
-- [ ] Commit only this task and the reviewed plan: `feat: add real project and demo portfolio catalog`.
+- [x] Run `node --test tests/portfolio.test.cjs`; verify it fails for the absent catalog.
+- [x] Implement the catalog with JRD first and the three demo destinations from the spec; replace numbered-image cards with the shared component, kind badge, description and real links. Use Next locale-aware links consistently: internal catalog URLs are already locale-prefixed and must not receive another prefix. External links use `noopener noreferrer`.
+- [x] Update heading and subtitle to “Projetos e demonstrações” / “Projects and demos”; remove the blanket statement that every item is fictitious. Derive descriptions from the actual project type without fabricated results.
+- [x] Run `node --test tests/portfolio.test.cjs` and `npm.cmd run check`; expected all tests and checks pass.
+- [x] Commit only this task and the reviewed plan: `feat: add real project and demo portfolio catalog`.
 
 ### Task 2: Layouts separados, barra de demonstração e Atlas Consulting
 
@@ -76,12 +76,12 @@ assert.equal(getPortfolioProjects('en').find(p => p.id === 'atlas-consulting').h
 
 **Interfaces:** Consume `getPortfolioProjects(locale)` and the existing `RootDocument`, `LocaleSync`, `getWhatsAppUrl`, mode provider and marketing components. Produce `DemoToolbar({locale, slug, projectName}: {locale: SupportedLocale; slug: Exclude<PortfolioProjectId, "jrd">; projectName: string})` and `AtlasConsulting({locale}: {locale: SupportedLocale})`. The server-rendered toolbar uses the explicit slug to build its locale-switch links and needs no browser pathname or global translation provider. Its quote link is a `wa.me` URL for `siteConfig.whatsappNumber`, with localized request text and the project name; it does not send a message automatically.
 
-- [ ] Add and run a failing isolated browser test that opens `/pt-BR/demos/atlas-consulting`, finds the demo identification, opens a FAQ answer and follows the portfolio return link. Include assertions that `/pt-BR/contact` remains Portuguese even with English browser preferences and that the marketing document has one main landmark.
-- [ ] Move the existing marketing routes without changing paths or their page exports. Keep locale validation and the HTML document at the locale root; move marketing chrome, mode provider and Organization schema into the marketing group layout.
-- [ ] Implement demo dispatch and metadata using the catalog slug, `generateStaticParams` for available demos, and `notFound` for unknown slugs. Set demo metadata to `noindex`; the toolbar must remain available without any duplicated marketing header/footer.
-- [ ] Build Atlas as the complete landing page in the spec. Use native `details/summary` for the FAQ, local visuals, scoped CSS and CTAs pointing to the toolbar's real quote destination. Make all section links work.
-- [ ] Run `npm.cmd run check`, `npm.cmd run build` and the Atlas/marketing browser checks; expect unchanged marketing URLs, a working PT/EN Atlas route and no duplicated locale prefixes. Run the existing smoke test against the resulting production server.
-- [ ] Commit: `feat: add isolated demo layouts and consulting landing page`.
+- [x] Add and run a failing isolated browser test that opens `/pt-BR/demos/atlas-consulting`, finds the demo identification, opens a FAQ answer and follows the portfolio return link. Include assertions that `/pt-BR/contact` remains Portuguese even with English browser preferences and that the marketing document has one main landmark.
+- [x] Move the existing marketing routes without changing paths or their page exports. Keep locale validation and the HTML document at the locale root; move marketing chrome, mode provider and Organization schema into the marketing group layout.
+- [x] Implement demo dispatch and metadata using the catalog slug, `generateStaticParams` for available demos, and `notFound` for unknown slugs. Set demo metadata to `noindex`; the toolbar must remain available without any duplicated marketing header/footer.
+- [x] Build Atlas as the complete landing page in the spec. Use native `details/summary` for the FAQ, local visuals, scoped CSS and CTAs pointing to the toolbar's real quote destination. Make all section links work.
+- [x] Run `npm.cmd run check`, `npm.cmd run build` and the Atlas/marketing browser checks; expect unchanged marketing URLs, a working PT/EN Atlas route and no duplicated locale prefixes. Run the existing smoke test against the resulting production server.
+- [x] Commit: `feat: add isolated demo layouts and consulting landing page`.
 
 ### Task 3: Forma Studio e galeria por categoria
 
@@ -89,11 +89,11 @@ assert.equal(getPortfolioProjects('en').find(p => p.id === 'atlas-consulting').h
 
 **Interfaces:** Consume `DemoToolbar` and localized project information. Produce `FormaStudio({locale}: {locale: SupportedLocale})` and `StudioGallery({projects, labels})`, where projects contain `{id, title, category: "residential" | "commercial", image, imageAlt}` and labels contain `all`, `residential`, `commercial`. All visible projects are identified as conceptual models.
 
-- [ ] Write and run a failing browser test for `/pt-BR/demos/forma-studio`: select “Comerciais”, verify only commercial cards remain, restore “Todos”, and repeat filter navigation with keyboard at a 360 px viewport.
-- [ ] Create the complete warm-toned site, local gallery assets, service section, navigation anchors and CTA. The gallery's client component owns only category state; the rest remains server-rendered.
-- [ ] Implement filter buttons with clear selected state and accessible names. Preserve the underlying project data when changing filters and show correctly labeled images.
-- [ ] Run the Forma browser checks plus `npm.cmd run check`; verify PT/EN titles and that `document.documentElement.scrollWidth` does not exceed the viewport during mobile use.
-- [ ] Commit: `feat: add architecture studio website demo`.
+- [x] Write and run a failing browser test for `/pt-BR/demos/forma-studio`: select “Comerciais”, verify only commercial cards remain, restore “Todos”, and repeat filter navigation with keyboard at a 360 px viewport.
+- [x] Create the complete warm-toned site, local gallery assets, service section, navigation anchors and CTA. The gallery's client component owns only category state; the rest remains server-rendered.
+- [x] Implement filter buttons with clear selected state and accessible names. Preserve the underlying project data when changing filters and show correctly labeled images.
+- [x] Run the Forma browser checks plus `npm.cmd run check`; verify PT/EN titles and that `document.documentElement.scrollWidth` does not exceed the viewport during mobile use.
+- [x] Commit: `feat: add architecture studio website demo`.
 
 ### Task 4: Modelo e persistência do FlowDesk
 
@@ -101,7 +101,7 @@ assert.equal(getPortfolioProjects('en').find(p => p.id === 'atlas-consulting').h
 
 **Interfaces:** Produce `DemoClient = {id, name, company, email}`; `QuoteLineItem = {id, description, quantity, unitPriceCents}`; `DemoQuote = {id, clientId, title, items, status: "draft" | "sent" | "approved"}`; `DemoState = {version: 1, clients: DemoClient[], quotes: DemoQuote[]}`. IDs and text fields are strings; quantities and monetary values are numbers. Produce `createSeedState(locale): DemoState`, `calculateQuoteTotal(items: QuoteLineItem[]): number`, `parseMoneyInput(value: string): number | null`, `parseDemoState(raw: string | null, locale): DemoState`, `applyDemoAction(state, action): DemoState`, `getDashboardStats(state): {clientCount, quoteCount, approvedTotalCents}`, `getDemoStorageKey(locale): string`, `saveDemoState(storage, locale, state): boolean`. Actions are `client/upsert`, `quote/upsert` and `quote/status`, with typed payloads. The storage interface uses only `setItem`.
 
-- [ ] Write failing tests asserting the following literal outcomes, and run `node --test tests/flowdesk.test.cjs`:
+- [x] Write failing tests asserting the following literal outcomes, and run `node --test tests/flowdesk.test.cjs`:
 
 ```js
 assert.equal(calculateQuoteTotal([{id:'i1', description:'Service', quantity:3, unitPriceCents:12990}]), 38970);
@@ -112,11 +112,11 @@ assert.equal(parseMoneyInput('1e4'), null);
 assert.throws(() => calculateQuoteTotal([{id:'i1', description:'Service', quantity:0, unitPriceCents:100}]));
 ```
 
-- [ ] Implement the pure model. Allow integer quantities from 1 to 1000 and nonnegative safe-integer cent amounts; reject nonfinite or unsafe totals. `parseMoneyInput` accepts up to two decimal digits and no thousands separators or exponent notation. Upserts edit existing IDs without duplicates; quotes require an existing client and valid items.
-- [ ] Add tests before implementing state parsing and updates: malformed JSON, unknown version/status, invalid item amounts, a quote pointing to a missing client, editing an existing record and an approved quote contributing exactly its total to the dashboard. Invalid stored states fall back to a fresh seed.
-- [ ] Implement per-locale seeds and keys `starke.flowdesk.demo.pt-BR.v1` / `starke.flowdesk.demo.en.v1`; save failures return `false` without throwing. Test blocked storage and independent locales. Never use user-entered content as HTML.
-- [ ] Run `node --test tests/flowdesk.test.cjs` and `npm.cmd run check`; expected all tests pass.
-- [ ] Commit: `feat: add FlowDesk demo data model and local persistence`.
+- [x] Implement the pure model. Allow integer quantities from 1 to 1000 and nonnegative safe-integer cent amounts; reject nonfinite or unsafe totals. `parseMoneyInput` accepts up to two decimal digits and no thousands separators or exponent notation. Upserts edit existing IDs without duplicates; quotes require an existing client and valid items.
+- [x] Add tests before implementing state parsing and updates: malformed JSON, unknown version/status, invalid item amounts, a quote pointing to a missing client, editing an existing record and an approved quote contributing exactly its total to the dashboard. Invalid stored states fall back to a fresh seed.
+- [x] Implement per-locale seeds and keys `starke.flowdesk.demo.pt-BR.v1` / `starke.flowdesk.demo.en.v1`; save failures return `false` without throwing. Test blocked storage and independent locales. Never use user-entered content as HTML.
+- [x] Run `node --test tests/flowdesk.test.cjs` and `npm.cmd run check`; expected all tests pass.
+- [x] Commit: `feat: add FlowDesk demo data model and local persistence`.
 
 ### Task 5: Interface interativa do FlowDesk
 
@@ -124,12 +124,12 @@ assert.throws(() => calculateQuoteTotal([{id:'i1', description:'Service', quanti
 
 **Interfaces:** Consume all domain interfaces from Task 4. Produce `FlowDeskDemo({locale}: {locale: SupportedLocale})`. Client and quote panels receive the current typed state and submit typed actions through callbacks. QuoteEditor receives the selected quote, available clients and submit/cancel callbacks. Load only `demos.flowdesk` translations into a nested client provider on this route.
 
-- [ ] Write and run a failing browser workflow: open the demo, create a client, create a two-item quote, verify its displayed total, approve it and verify the panel total, then edit that quote. Assert the new client and quote remain after reload.
-- [ ] Implement navigation between dashboard, clients and quotes, search, editors, inline validation, status changes and restore. The seed must render consistently on the server; wait for initial state loading before persisting changes, so a saved state is never overwritten by the seed on mount.
-- [ ] Add tests before handling failure cases: initialize the browser with a saved custom client and verify it survives first load; block storage and still create a client during the session; use malformed saved data and verify the page opens with seed data. Test that switching locale opens the independent dataset.
-- [ ] Implement these cases and accessible keyboard operation, field labels, focus on editor open/close and clear demo/local-save status. Keep all customer data local and all real quote requests separate from the demo's fictitious records.
-- [ ] Run FlowDesk browser tests on desktop and 360 px, `npm.cmd run check` and the full test suite. Expect the complete create/edit/approve/reload/reset workflow to pass without network calls carrying the demo records.
-- [ ] Commit: `feat: add interactive FlowDesk client and quote demo`.
+- [x] Write and run a failing browser workflow: open the demo, create a client, create a two-item quote, verify its displayed total, approve it and verify the panel total, then edit that quote. Assert the new client and quote remain after reload.
+- [x] Implement navigation between dashboard, clients and quotes, search, editors, inline validation, status changes and restore. The seed must render consistently on the server; wait for initial state loading before persisting changes, so a saved state is never overwritten by the seed on mount.
+- [x] Add tests before handling failure cases: initialize the browser with a saved custom client and verify it survives first load; block storage and still create a client during the session; use malformed saved data and verify the page opens with seed data. Test that switching locale opens the independent dataset.
+- [x] Implement these cases and accessible keyboard operation, field labels, focus on editor open/close and clear demo/local-save status. Keep all customer data local and all real quote requests separate from the demo's fictitious records.
+- [x] Run FlowDesk browser tests on desktop and 360 px, `npm.cmd run check` and the full test suite. Expect the complete create/edit/approve/reload/reset workflow to pass without network calls carrying the demo records.
+- [x] Commit: `feat: add interactive FlowDesk client and quote demo`.
 
 ### Task 6: Prévias, regressão e template final
 
@@ -137,11 +137,11 @@ assert.throws(() => calculateQuoteTotal([{id:'i1', description:'Service', quanti
 
 **Interfaces:** Consume the three completed demo routes, catalog image paths and existing `npm.cmd run template`. Produce current local preview images, smoke coverage for 32 localized pages and updated delivery documentation. Browser artifacts remain ignored and outside the template allowlist.
 
-- [ ] Add and run failing smoke assertions for all six demo pages, demo `noindex`, unknown demo 404, and their exclusion from the sitemap. Add browser assertions that the two portfolio surfaces show one real-project badge and three demo badges with the correct destinations.
-- [ ] Capture actual model previews and a read-only screenshot of JRD in an isolated browser; do not click its contact actions. Use a clearly identified illustrative preview if a capture is unavailable, and record that limitation. Verify every image path in the catalog exists and remove the six obsolete numbered placeholder SVGs once unused.
-- [ ] Verify all model contact URLs use `siteConfig.whatsappNumber`, include the model reference and preserve PT/EN wording. Check keyboard operation, desktop and mobile presentation, image loading, return links and absence of unexpected horizontal scrolling.
-- [ ] Run `npm.cmd run check`, `npm.cmd run build`, browser tests and the expanded smoke test against production. Expect seven original tests plus new domain/catalog tests, 26 marketing pages and six demo pages, with no type, lint or runtime failures.
-- [ ] Update README/checklist to describe real JRD work, available demos and local-only FlowDesk behavior. Run `npm.cmd run template`; inspect ZIP entries and compare the archived lockfile with the current one, ensuring no private configuration or caches are present.
+- [x] Add and run failing smoke assertions for all six demo pages, demo `noindex`, unknown demo 404, and their exclusion from the sitemap. Add browser assertions that the two portfolio surfaces show one real-project badge and three demo badges with the correct destinations.
+- [x] Capture actual model previews and a read-only screenshot of JRD in an isolated browser; do not click its contact actions. Use a clearly identified illustrative preview if a capture is unavailable, and record that limitation. Verify every image path in the catalog exists and remove the six obsolete numbered placeholder SVGs once unused.
+- [x] Verify all model contact URLs use `siteConfig.whatsappNumber`, include the model reference and preserve PT/EN wording. Check keyboard operation, desktop and mobile presentation, image loading, return links and absence of unexpected horizontal scrolling.
+- [x] Run `npm.cmd run check`, `npm.cmd run build`, browser tests and the expanded smoke test against production. Expect seven original tests plus new domain/catalog tests, 26 marketing pages and six demo pages, with no type, lint or runtime failures.
+- [x] Update README/checklist to describe real JRD work, available demos and local-only FlowDesk behavior. Run `npm.cmd run template`; inspect ZIP entries and compare the archived lockfile with the current one, ensuring no private configuration or caches are present.
 - [ ] Request the final independent code review, fix any important findings, rerun affected checks, and commit the validated work. Push only the current authorized branch with a normal push and report commit, demo links, validation and any remaining limits.
 
 ## Execution Handoff
@@ -149,3 +149,7 @@ assert.throws(() => calculateQuoteTotal([{id:'i1', description:'Service', quanti
 Recomendação: execução **Native**, nesta sessão, seguida de uma revisão independente da alteração completa. Os modelos compartilham o catálogo, os layouts e as traduções; a execução sequencial reduz conflitos nessas interfaces, e os testes de navegador verificam as interações antes da entrega. A alternativa **Subagent-driven** executa cada tarefa com um implementador e um revisor independentes, com maior custo de coordenação.
 
 Implementar somente após a revisão deste plano e a escolha do método pelo usuário.
+
+## Estado de execução — 21/10/2026
+
+Tarefas 1–6 implementadas na branch isolada, com 22 testes de unidade, 50 testes de navegador em produção e smoke de 32 páginas aprovados. A nova cobertura de smoke já passou no comportamento existente; RED foi reproduzido nos dois casos de perda de foco sob busca ativa e corrigido. Capturas reais dos quatro projetos e documentação/template atualizados. Revisão final independente e push ficam com o controlador, conforme o contrato de execução; o último item permanece aberto até esse gate. Evidências detalhadas em .superpowers/sdd/2026-10-20-portfolio-demos/task-6-report.md (coordenação local, fora do template).

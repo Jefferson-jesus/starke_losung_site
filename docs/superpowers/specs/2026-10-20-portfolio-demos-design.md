@@ -82,3 +82,7 @@ Autenticação, contas reais, pagamentos, emissão fiscal, integrações empresa
 ## Continuidade
 
 Após a revisão deste desenho, produzir o plano de implementação com os arquivos, etapas e verificações. A execução será proposta no ambiente atual. Commit e push da implementação ocorrerão ao final da validação, conforme a autorização do usuário para finalizar o trabalho no repositório.
+
+## Estado de aceite — 21/10/2026
+
+Critérios 1–9 implementados e verificados localmente: catálogo com 1 projeto publicado e 3 demos, seis rotas de modelos em PT/EN, fluxos interativos, 22 testes de unidade, 50 testes de navegador, build estático, smoke de 32 páginas, inspeção visual desktop/360 px, documentação e template. As capturas são reais; o site externo JRD foi acessado somente para leitura. Revisão independente final e push permanecem sob responsabilidade do controlador. Os testes não acionam envio real de contato; validação comercial no aparelho físico continua no checklist de lançamento.

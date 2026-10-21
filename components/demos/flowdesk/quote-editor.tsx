@@ -20,9 +20,14 @@ export function QuoteEditor({ quote, clients, locale, onSubmit, onCancel }: { qu
   useEffect(() => {
     const element = dialog.current;
     const opener = document.activeElement as HTMLElement | null;
+    const search = element?.closest("section")?.querySelector<HTMLInputElement>('input[type="search"]');
     element?.showModal();
     element?.querySelector("input")?.focus();
-    return () => { element?.close(); opener?.focus(); };
+    return () => {
+      element?.close();
+      if (opener?.isConnected) opener.focus();
+      else if (search?.isConnected) search.focus();
+    };
   }, []);
 
   // Both live preview and submission use the domain parser and total validator.

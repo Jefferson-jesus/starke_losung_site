@@ -1,6 +1,28 @@
 import { expect, test, type Page } from "@playwright/test";
 
 const key = "starke.flowdesk.demo.pt-BR.v1";
+for (const panel of ["clients", "quotes"] as const) {
+  test(`filtered ${panel} editor restores keyboard focus when the renamed card disappears`, async ({ page }) => {
+    await page.goto("/pt-BR/demos/flowdesk");
+    const client = panel === "clients";
+    await page.getByRole("button", { name: client ? "Clientes" : "Orçamentos", exact: true }).click();
+    const firstCard = page.getByRole("article").first();
+    const original = await firstCard.getAttribute("aria-label");
+    const search = page.getByLabel(client ? "Buscar clientes" : "Buscar orçamentos");
+    await search.fill(original!);
+    await firstCard.getByRole("button", { name: "Editar" }).focus();
+    await page.keyboard.press("Enter");
+    await page.getByLabel(client ? "Nome" : "Título do orçamento", { exact: true }).fill("Registro renomeado");
+    const save = page.getByRole("button", { name: client ? "Salvar cliente" : "Salvar orçamento", exact: true });
+    await save.focus();
+    await page.keyboard.press("Enter");
+    await expect(page.getByRole("dialog")).toHaveCount(0);
+    await expect(page.getByRole("article")).toHaveCount(0);
+    await expect(search).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(page.getByRole("button", { name: client ? "Novo cliente" : "Novo orçamento", exact: true })).toBeFocused();
+  });
+}
 async function openClients(page: Page) {
   await page.getByRole("button", { name: "Clientes", exact: true }).click();
 }

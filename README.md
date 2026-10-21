@@ -50,7 +50,39 @@ Com o servidor de produção aberto, em outro terminal:
 npm.cmd run smoke
 ```
 
-Para outra porta, defina `SMOKE_BASE_URL` antes de executar. O smoke test verifica as 26 páginas PT/EN, idioma do HTML, detecção inicial, sitemap e rotas inexistentes.
+Para outra porta, defina `SMOKE_BASE_URL` antes de executar. O smoke verifica 32 páginas PT/EN (26 comerciais e seis demos), idioma, detecção inicial, `noindex` das demos, exclusão do sitemap e respostas 404.
+
+Os testes de navegador usam Chromium em desktop e 360 px:
+
+```powershell
+npx.cmd playwright install chromium
+npm.cmd run test:e2e
+```
+
+Para testar um servidor de produção já iniciado, defina `PLAYWRIGHT_BASE_URL`, por exemplo `http://127.0.0.1:3215`. Sem essa variável, o Playwright inicia e encerra seu servidor de desenvolvimento na porta 3212.
+
+## Projetos e demonstrações
+
+A página inicial e `/pt-BR/portfolio` (ou `/en/portfolio`) apresentam o projeto publicado [JRD Soluções e Manutenções](https://www.jrdsolucoesemanutencoes.com.br/) e três demonstrações autorais com nomes e dados fictícios:
+
+| Modelo | Português | Inglês | Interação |
+| --- | --- | --- | --- |
+| Atlas Consulting | `/pt-BR/demos/atlas-consulting` | `/en/demos/atlas-consulting` | Seções e perguntas frequentes |
+| Forma Studio | `/pt-BR/demos/forma-studio` | `/en/demos/forma-studio` | Galeria de estudos conceituais por categoria |
+| FlowDesk | `/pt-BR/demos/flowdesk` | `/en/demos/flowdesk` | Clientes, orçamentos, itens, totais e status |
+
+As demos são estáticas, têm `noindex`, ficam fora do sitemap comercial e mantêm suas próprias cores. Seus links comerciais abrem o WhatsApp configurado com referência ao modelo; o visitante confirma o envio no WhatsApp.
+
+O FlowDesk salva somente neste navegador, sem API, autenticação ou integração empresarial. Os conjuntos PT e EN são independentes, em BRL e USD, sem conversão. Armazenamento bloqueado mantém o estado apenas na sessão; dados salvos inválidos voltam ao conjunto inicial. **Restaurar demonstração** pede confirmação e repõe os dados fictícios do idioma ativo.
+
+O catálogo está em `lib/portfolio.ts`. As capturas reais ficam em `public/portfolio/*.png`; as ilustrações conceituais da galeria Forma ficam em `public/demos/forma/`. Para atualizar as prévias, com o servidor de produção aberto:
+
+```powershell
+$env:PREVIEW_BASE_URL='http://127.0.0.1:3215'
+node scripts/capture-previews.mjs
+```
+
+O script captura os três modelos em desktop e 360 px e abre a JRD em contexto isolado apenas para leitura, sem acionar contato. As evidências completas ficam em `test-results/previews/`, fora do template. Se a JRD estiver indisponível, a captura falha explicitamente; não substitua a prévia por uma página de erro.
 
 Na Vercel: importe o repositório, selecione Next.js, configure as variáveis e publique. Em outra hospedagem compatível com Node.js: `npm ci`, `npm run build` e `npm start`, atrás de HTTPS. A fonte Inter está incluída localmente com a licença em `public/fonts/OFL.txt`.
 
