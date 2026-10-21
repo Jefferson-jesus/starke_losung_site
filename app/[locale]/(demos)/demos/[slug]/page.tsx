@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { hasLocale } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getPortfolioProjects } from "@/lib/portfolio";
 import { DemoToolbar } from "@/components/demos/demo-toolbar";
 import { AtlasConsulting } from "@/components/demos/atlas-consulting";
 import { FormaStudio } from "@/components/demos/forma-studio";
+import { FlowDeskDemo } from "@/components/demos/flowdesk/flowdesk-demo";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
-const availableDemos = ["atlas-consulting", "forma-studio"] as const;
+const availableDemos = ["atlas-consulting", "forma-studio", "flowdesk"] as const;
 
 export function generateStaticParams() {
   return availableDemos.map((slug) => ({ slug }));
@@ -38,10 +39,11 @@ export default async function DemoPage({ params }: Props) {
   const values = await params;
   const { project, locale, slug } = getDemo(values.locale, values.slug);
   setRequestLocale(locale);
+  const flowdeskMessages = slug === "flowdesk" ? (await getMessages()).demos : undefined;
   return (
     <>
       <DemoToolbar locale={locale} slug={slug} projectName={project.title} />
-      {slug === "forma-studio" ? <FormaStudio locale={locale} /> : <AtlasConsulting locale={locale} />}
+      {slug === "flowdesk" ? <NextIntlClientProvider locale={locale} messages={{ demos: { flowdesk: (flowdeskMessages as { flowdesk: Record<string, string> }).flowdesk } }}><FlowDeskDemo key={locale} locale={locale} /></NextIntlClientProvider> : slug === "forma-studio" ? <FormaStudio locale={locale} /> : <AtlasConsulting locale={locale} />}
     </>
   );
 }
