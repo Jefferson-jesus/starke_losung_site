@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="820" viewBox="0 0 1440 820" fill="none">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#c5d2ce"/><stop offset="1" stop-color="#f4eddb"/></linearGradient>
+    <linearGradient id="stone" x2="1" y2="1"><stop stop-color="#e1d6bd"/><stop offset="1" stop-color="#bdb295"/></linearGradient>
+    <linearGradient id="water" x2="1" y2="1"><stop stop-color="#647d76"/><stop offset=".55" stop-color="#9aada0"/><stop offset="1" stop-color="#bcc9b4"/></linearGradient>
+    <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#34443f"/><stop offset="1" stop-color="#64746b"/></linearGradient>
+    <pattern id="stoneLines" width="115" height="45" patternUnits="userSpaceOnUse"><path d="M0 0h115M0 45h115M0 0v45M58 0v23M58 23h57" stroke="#9e927b" stroke-opacity=".18"/></pattern>
+    <pattern id="slats" width="13" height="20" patternUnits="userSpaceOnUse"><path d="M2 0v20" stroke="#635c43" stroke-width="3"/></pattern>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1440v820H0z"/>
+  <path d="M0 295q110-100 235-20t195-30q120-70 240-10t240-18q150-66 290 5t240-15v280H0Z" fill="#9da78c"/>
+  <path d="M0 365q175-155 300-30t280-10q145-110 310-4t280-15q110-78 270-12v250H0Z" fill="#7d8b71"/>
+  <path fill="#c3b797" d="M0 560h1440v260H0z"/>
+  <path d="m0 682 760-175 680 117v196H0Z" fill="#d2c6aa"/>
+  <path d="m82 625 520-129 667 44 171 193-940 87H82Z" fill="#b2a687" opacity=".65"/>
+  <path d="M600 188h726v355H600Z" fill="url(#stone)"/>
+  <path d="m1326 188 114 35v349l-114-29Z" fill="#b2a486"/>
+  <path d="M600 188h726v355H600Z" fill="url(#stoneLines)"/>
+  <path d="M573 181h767v29H573Z" fill="#ebe0c9"/>
+  <path d="M626 290h646v253H626Z" fill="url(#glass)"/>
+  <path d="M645 300h180v232H645Z" fill="#b0ac94" opacity=".28"/>
+  <path d="m825 300 220 232H825Z" fill="#e1d7bb" opacity=".1"/>
+  <path d="M642 532V300h614v232M823 300v232m222-232v232" stroke="#5a5b4e" stroke-width="9"/>
+  <path d="M653 470h140v62H653Z" fill="#b4a58a"/><path d="M667 453h110v35H667Z" fill="#c3b49b"/>
+  <path d="M1124 326h111v206h-111Z" fill="#928467"/><path d="M1124 326h111v206h-111Z" fill="url(#slats)"/>
+  <path d="m130 219 450 11v360l-450 65Z" fill="url(#stone)"/>
+  <path d="m0 271 130-52v436L0 691Z" fill="#aaa082"/>
+  <path d="m130 219 450 11v360l-450 65Z" fill="url(#stoneLines)"/>
+  <path d="m111 206 485 13v29l-485-13Z" fill="#e9dfca"/>
+  <path d="m0 254 111-48v29L0 281Z" fill="#c8bca0"/>
+  <path d="m177 320 350 2v243l-350 49Z" fill="#565d4e"/>
+  <path d="m198 337 307-1v210l-307 40Z" fill="url(#glass)"/>
+  <path d="m225 337 101 1v231l-101 15Z" fill="#a99b7d"/><path d="m225 337 101 1v231l-101 15Z" fill="url(#slats)"/>
+  <path d="m357 336 2 226m98-226 1 210" stroke="#6b6d59" stroke-width="6"/>
+  <path d="m562 561 713-8 144 187-838 59-180-79Z" fill="#ede4cf"/>
+  <path d="m585 582 672-10 111 148-806 54-139-62Z" fill="url(#water)"/>
+  <path d="m585 582 672-10 11 16-669 15-144 110-32-1Z" fill="#52665b" opacity=".55"/>
+  <path d="m720 609 476-9M640 645l593-24M553 683l694-27M580 730l714-35" stroke="#d6ddc8" stroke-width="2" opacity=".36"/>
+  <path d="m964 582 23 168 46-3-30-165M1050 579l41 164 25-2-39-162" fill="#c5c7ad" opacity=".25"/>
+  <path d="m0 737 370-83 120 166H0Z" fill="#ddd3b9"/>
+  <path d="m130 820 139-142M0 778l412-73M1150 820l-37-67" stroke="#aa9e83" opacity=".5"/>
+  <ellipse cx="740" cy="561" rx="98" ry="21" fill="#777c5f" opacity=".35"/>
+  <path d="M746 552c-14-109 4-171 0-283m0 110-57-87m58 130 55-108m-56 19 31-74" stroke="#655f43" stroke-width="12"/>
+  <g fill="#657757"><ellipse cx="686" cy="279" rx="68" ry="44"/><ellipse cx="775" cy="254" rx="85" ry="49"/><ellipse cx="810" cy="307" rx="77" ry="40"/><ellipse cx="727" cy="327" rx="73" ry="47"/></g>
+  <g fill="#7d8b64"><ellipse cx="668" cy="265" rx="40" ry="22"/><ellipse cx="746" cy="238" rx="55" ry="27"/><ellipse cx="807" cy="274" rx="52" ry="26"/><ellipse cx="739" cy="301" rx="43" ry="20"/></g>
+  <path d="M0 701q80-83 170-36t111 72L0 797Z" fill="#7a805c"/>
+  <path d="M0 721q77-59 143-24t93 52L0 790Z" fill="#8f956b"/>
+  <path d="m1373 616 67-27v231h-63q-38-90-4-204Z" fill="#596c50"/>
+  <g stroke="#788564" stroke-width="3"><path d="m1390 749 29-110m-27 77-18-52m30 15 36-26m-36 70 36-18"/></g>
+  <path d="M0 0h1440v820H0z" fill="#c8a775" opacity=".045"/>
+</svg>

@@ -6,9 +6,10 @@ import { routing } from "@/i18n/routing";
 import { getPortfolioProjects } from "@/lib/portfolio";
 import { DemoToolbar } from "@/components/demos/demo-toolbar";
 import { AtlasConsulting } from "@/components/demos/atlas-consulting";
+import { FormaStudio } from "@/components/demos/forma-studio";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
-const availableDemos = ["atlas-consulting"] as const;
+const availableDemos = ["atlas-consulting", "forma-studio"] as const;
 
 export function generateStaticParams() {
   return availableDemos.map((slug) => ({ slug }));
@@ -40,7 +41,7 @@ export default async function DemoPage({ params }: Props) {
   return (
     <>
       <DemoToolbar locale={locale} slug={slug} projectName={project.title} />
-      <AtlasConsulting locale={locale} />
+      {slug === "forma-studio" ? <FormaStudio locale={locale} /> : <AtlasConsulting locale={locale} />}
     </>
   );
 }
