@@ -38,12 +38,12 @@ Não há checkout nem conversão automática de moedas. O site inicia uma conver
 
 ## Verificação reproduzível
 
-Execute `npm.cmd run check`, `npm.cmd run build` e, com o servidor em produção aberto, `npm.cmd run smoke` e `npm.cmd run test:e2e` com `PLAYWRIGHT_BASE_URL` apontando para esse servidor. A instalação inicial do navegador usa `npx.cmd playwright install chromium`. Execute `npm.cmd audit` para acompanhar os avisos atuais das bibliotecas. Não use `npm audit fix --force` sem revisar as mudanças de versão principal.
+Execute `npm.cmd run check`, `npm.cmd run build`, `npm.cmd run test:bundles` e, com o servidor em produção aberto, `npm.cmd run smoke` e `npm.cmd run test:e2e` com `PLAYWRIGHT_BASE_URL` apontando para esse servidor. A instalação inicial do navegador usa `npx.cmd playwright install chromium`. Execute `npm.cmd audit` para acompanhar os avisos atuais das bibliotecas. Não use `npm audit fix --force` sem revisar as mudanças de versão principal.
 
 Na consulta de 21/10/2026, `npm audit --omit=dev` não reportou vulnerabilidades nas dependências de produção. A auditoria completa ainda reportou 9 avisos (7 altos e 2 moderados) na cadeia de ferramentas de desenvolvimento, incluindo Tailwind 3 e ferramentas de análise. A atualização dessas ferramentas para novas versões principais exige uma migração própria e uma nova validação do CSS e da análise de código.
 
 A validação automatizada cobre tipos, lint, domínio, catálogo e fluxos de navegador em desktop e 360 px. As capturas de produção foram inspecionadas localmente; a conferência no aparelho físico e o envio real no aplicativo permanecem no checklist antes dos anúncios.
 
-Resultados desta revisão: `npm.cmd run check` passou com 22 testes, lint e tipos; `npm.cmd run build` gerou 37 páginas, incluindo 26 comerciais e seis demos localizadas estáticas. Em produção, os 50 testes de navegador e o smoke das 32 páginas passaram, incluindo idioma, `noindex`, sitemap e 404. O ZIP foi regenerado e conferido com lockfile idêntico ao atual e sem arquivos privados, caches ou evidências de navegador. As traduções de FlowDesk permanecem restritas à sua rota.
+Resultados desta revisão: `npm.cmd run check` passou com 22 testes, lint e tipos; `npm.cmd run build` gerou 37 páginas, incluindo 26 comerciais e seis demos localizadas estáticas. Em produção, os 50 testes de navegador e o smoke das 32 páginas passaram, incluindo idioma, `noindex`, sitemap e 404. O ZIP foi regenerado e conferido com lockfile idêntico ao atual e sem arquivos privados, caches ou evidências de navegador. As traduções e o código cliente de FlowDesk permanecem restritos às suas rotas; `test:bundles` verifica o código enviado nos scripts das 32 páginas estáticas.
 
 Para encerrar o lançamento, conclua os itens da tabela no ambiente publicado, incluindo o teste real do atendimento e o domínio definitivo.

@@ -41,6 +41,7 @@ Na Vercel, a indexação é liberada apenas quando `VERCEL_ENV=production`. Prev
 ```powershell
 npm.cmd run check
 npm.cmd run build
+npm.cmd run test:bundles
 npm.cmd start
 ```
 
@@ -51,6 +52,8 @@ npm.cmd run smoke
 ```
 
 Para outra porta, defina `SMOKE_BASE_URL` antes de executar. O smoke verifica 32 páginas PT/EN (26 comerciais e seis demos), idioma, detecção inicial, `noindex` das demos, exclusão do sitemap e respostas 404.
+
+Após o build, `test:bundles` inspeciona os scripts das 32 páginas estáticas e verifica que o código do FlowDesk é enviado somente às suas duas rotas.
 
 Os testes de navegador usam Chromium em desktop e 360 px:
 
