@@ -11,3 +11,4 @@ tsconfig.tsbuildinfo
 .npm-cache
 .env.*
 !.env.example
+.worktrees/
