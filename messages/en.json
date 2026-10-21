@@ -143,33 +143,14 @@
       ]
     },
     "portfolio": {
-      "title": "Website Demos",
-      "cards": [
-        {
-          "title": "Dental Clinic",
-          "category": "Business"
-        },
-        {
-          "title": "Law Firm",
-          "category": "Landing Page"
-        },
-        {
-          "title": "Industrial Supplier",
-          "category": "SEO"
-        },
-        {
-          "title": "Aesthetic Studio",
-          "category": "Performance"
-        },
-        {
-          "title": "Construction Company",
-          "category": "Business"
-        },
-        {
-          "title": "Consulting Agency",
-          "category": "Landing Page"
-        }
-      ]
+      "title": "Projects and demos",
+      "subtitle": "A published client project and original demos. The three demos use fictional names and data.",
+      "labels": {
+        "live": "Published project",
+        "demo": "Original demo",
+        "visit": "Visit website",
+        "explore": "Explore demo"
+      }
     },
     "testimonials": {
       "title": "Testimonials",
@@ -228,8 +209,9 @@
       "subtitle": "Software and website development, from planning to launch."
     },
     "portfolio": {
-      "title": "Portfolio",
-      "subtitle": "Demonstration layouts and styles. These are not completed client projects."
+      "title": "Projects and demos",
+      "subtitle": "Meet the published JRD website and explore three original demos with fictional names and data.",
+      "gridTitle": "Explore the projects"
     },
     "pricing": {
       "title": "Pricing",

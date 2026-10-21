@@ -1,32 +1,55 @@
 ﻿import Image from "next/image";
 
-type PortfolioCard = {
-  title: string;
-  category: string;
-};
+import Link from "next/link";
+import type { PortfolioProject } from "@/lib/portfolio";
 
 type Props = {
   title: string;
-  cards: PortfolioCard[];
+  subtitle?: string;
+  projects: PortfolioProject[];
+  labels: { live: string; demo: string; visit: string; explore: string };
 };
 
-export function PortfolioGrid({ title, cards }: Props) {
+export function PortfolioGrid({ title, subtitle, projects, labels }: Props) {
   return (
     <section className="block-shell py-16">
       <h2 className="text-3xl font-semibold text-metal">{title}</h2>
-      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {cards.map((item, index) => (
-          <article key={item.title} className="overflow-hidden rounded-[var(--radius-xl)] border border-[var(--color-border)] bg-[var(--color-surface)]">
+      {subtitle && <p className="mt-3 max-w-3xl text-[var(--color-muted)]">{subtitle}</p>}
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
+        {projects.map((item) => (
+          <article key={item.id} className="flex flex-col overflow-hidden rounded-[var(--radius-xl)] border border-[var(--color-border)] bg-[var(--color-surface)]">
             <Image
-              src={`/portfolio-${index + 1}.svg`}
-              alt={item.title}
+              src={item.image}
+              alt={item.imageAlt}
               width={1200}
               height={800}
-              className="aspect-[4/3] h-auto w-full object-cover transition duration-500 hover:scale-105"
+              sizes="(min-width: 1280px) 560px, (min-width: 768px) 50vw, 100vw"
+              className="aspect-[3/2] h-auto w-full object-cover"
             />
-            <div className="p-5">
-              <h3 className="text-base font-semibold text-[var(--color-fg)]">{item.title}</h3>
-              <p className="mt-1 text-sm text-[var(--color-muted)]">{item.category}</p>
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <span className="self-start rounded-full border border-[var(--color-border)] px-3 py-1 text-xs font-medium text-[var(--color-fg)]">
+                {labels[item.kind]}
+              </span>
+              <p className="mt-4 text-xs uppercase tracking-wider text-[var(--color-muted)]">{item.category}</p>
+              <h3 className="mt-2 text-xl font-semibold text-[var(--color-fg)]">{item.title}</h3>
+              <p className="mb-6 mt-3 text-sm leading-relaxed text-[var(--color-muted)]">{item.description}</p>
+              {item.external ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto self-start rounded-sm text-sm font-medium text-[var(--color-fg)] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+                >
+                  {labels.visit}<span className="sr-only">: {item.title}</span> <span aria-hidden="true">↗</span>
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  className="mt-auto self-start rounded-sm text-sm font-medium text-[var(--color-fg)] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+                >
+                  {labels.explore}<span className="sr-only">: {item.title}</span> <span aria-hidden="true">→</span>
+                </Link>
+              )}
             </div>
           </article>
         ))}

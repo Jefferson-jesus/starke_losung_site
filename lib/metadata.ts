@@ -27,12 +27,12 @@ const pageData = {
   },
   portfolio: {
     en: {
-      title: "Portfolio | STARKE LOSUNG",
-      description: "Selected projects in web design and digital campaigns."
+      title: "Projects and demos | STARKE LOSUNG",
+      description: "Explore the published JRD website and original demos of a B2B landing page, an architecture website and a business management system."
     },
     "pt-BR": {
-      title: "Portfolio | STARKE LOSUNG",
-      description: "Projetos selecionados em design de sites e campanhas digitais."
+      title: "Projetos e demonstrações | STARKE LOSUNG",
+      description: "Conheça o site publicado da JRD e demonstrações autorais de uma landing page B2B, um site de arquitetura e um sistema de gestão."
     }
   },
   pricing: {

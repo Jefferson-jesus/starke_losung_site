@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#e7ebee"/>
+  <rect x="64" y="64" width="1072" height="650" rx="18" fill="#fff"/>
+  <path d="M82 64h1036a18 18 0 0 1 18 18v80H64V82a18 18 0 0 1 18-18" fill="#172932"/>
+  <text x="108" y="128" fill="#fff" font-family="Arial,sans-serif" font-size="42" font-weight="700">JRD</text>
+  <path d="M780 112h84m42 0h84m42 0h56" stroke="#84969f" stroke-width="8" stroke-linecap="round"/>
+  <rect x="64" y="162" width="1072" height="356" fill="#203e4a"/>
+  <path d="M110 244h332m-332 44h398m-398 64h282" stroke="#f4f8f9" stroke-width="22"/>
+  <rect x="110" y="406" width="212" height="48" rx="8" fill="#4ea884"/>
+  <g fill="none" stroke="#86a4ae" stroke-width="12">
+    <path d="M794 224v222h220V286l-62-62zM794 286h220M856 286v160M922 286v160"/>
+    <path d="M752 446h304"/>
+  </g>
+  <g fill="#eef2f4">
+    <rect x="110" y="552" width="294" height="116" rx="10"/>
+    <rect x="452" y="552" width="294" height="116" rx="10"/>
+    <rect x="794" y="552" width="294" height="116" rx="10"/>
+  </g>
+  <path d="M142 588h180m-180 32h132m210-32h180m-180 32h132m210-32h180m-180 32h132" stroke="#a0afb7" stroke-width="10"/>
+  <text x="600" y="761" text-anchor="middle" fill="#43545d" font-family="Arial,sans-serif" font-size="22">Representação ilustrativa · Illustrative preview</text>
+</svg>

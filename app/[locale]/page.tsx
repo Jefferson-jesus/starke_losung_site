@@ -2,6 +2,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { siteConfig } from "@/site.config";
 import { getPageMetadata } from "@/lib/metadata";
+import { getPortfolioProjects } from "@/lib/portfolio";
 import { getWhatsAppUrl } from "@/lib/locale";
 import { CampaignBanner } from "@/components/blocks/campaign-banner";
 import { HeroBlock } from "@/components/blocks/hero-block";
@@ -24,7 +25,6 @@ type Props = {
 type ServiceCard = { slug: string; title: string; description: string };
 type WhyBlock = { title: string; description: string };
 type ProcessStep = { title: string; description: string };
-type PortfolioCard = { title: string; category: string };
 type Testimonial = { name: string; role: string; quote: string };
 type FaqItem = { question: string; answer: string };
 type TrustItem = { icon: string; title: string; description: string };
@@ -45,7 +45,7 @@ export default async function HomePage({ params }: Props) {
   const serviceCards = t.raw("services.cards") as ServiceCard[];
   const whyUsBlocks = t.raw("whyUs.blocks") as WhyBlock[];
   const processSteps = t.raw("process.steps") as ProcessStep[];
-  const portfolioCards = t.raw("portfolio.cards") as PortfolioCard[];
+  const portfolioProjects = getPortfolioProjects(locale);
   const testimonials = t.raw("testimonials.items") as Testimonial[];
   const faqItems = t.raw("faq.items") as FaqItem[];
   const trustItems = t.raw("trust.items") as TrustItem[];
@@ -96,7 +96,17 @@ export default async function HomePage({ params }: Props) {
         showInStandard={siteConfig.mode.showProcessInStandard}
       />
 
-      <PortfolioGrid title={t("portfolio.title")} cards={portfolioCards} />
+      <PortfolioGrid
+        title={t("portfolio.title")}
+        subtitle={t("portfolio.subtitle")}
+        projects={portfolioProjects}
+        labels={{
+          live: t("portfolio.labels.live"),
+          demo: t("portfolio.labels.demo"),
+          visit: t("portfolio.labels.visit"),
+          explore: t("portfolio.labels.explore")
+        }}
+      />
 
       {siteConfig.content.showCaseStudy && <CaseStudyHighlight
         label={t("caseStudy.label")}

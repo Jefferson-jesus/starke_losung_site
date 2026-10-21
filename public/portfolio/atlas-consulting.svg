@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#dbe4f2"/>
+  <rect x="64" y="64" width="1072" height="672" rx="18" fill="#f7f9fd"/>
+  <text x="108" y="134" fill="#102c55" font-family="Arial,sans-serif" font-size="31" font-weight="700">ATLAS CONSULTING</text>
+  <path d="M834 122h72m40 0h56m40 0h50" stroke="#91a0b5" stroke-width="8" stroke-linecap="round"/>
+  <path d="M108 236h194" stroke="#6385b4" stroke-width="9"/>
+  <path d="M108 296h456m-456 52h384" stroke="#153968" stroke-width="30"/>
+  <path d="M108 410h408m-408 26h326" stroke="#8c9aaf" stroke-width="9"/>
+  <rect x="108" y="482" width="206" height="52" rx="5" fill="#153968"/>
+  <rect x="664" y="208" width="424" height="326" rx="12" fill="#173b6c"/>
+  <g fill="none" stroke="#91afd4" stroke-width="2">
+    <circle cx="876" cy="371" r="113"/><circle cx="876" cy="371" r="74"/>
+    <path d="M714 371h324M876 226v290M764 462l224-182M764 280l224 182"/>
+  </g>
+  <path d="M754 432l94-90 69 35 88-93" fill="none" stroke="#e8f0fc" stroke-width="8"/>
+  <g fill="#e7edf6">
+    <rect x="108" y="594" width="294" height="98" rx="8"/><rect x="452" y="594" width="294" height="98" rx="8"/><rect x="794" y="594" width="294" height="98" rx="8"/>
+  </g>
+  <path d="M140 628h126m-126 30h214m130-30h126m-126 30h214m130-30h126m-126 30h214" stroke="#9eafc6" stroke-width="9"/>
+</svg>

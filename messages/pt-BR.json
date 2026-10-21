@@ -143,33 +143,14 @@
       ]
     },
     "portfolio": {
-      "title": "Modelos de sites",
-      "cards": [
-        {
-          "title": "Clinica Odontologica",
-          "category": "Business"
-        },
-        {
-          "title": "Escritorio Juridico",
-          "category": "Landing Page"
-        },
-        {
-          "title": "Fornecedor Industrial",
-          "category": "SEO"
-        },
-        {
-          "title": "Estudio de Estetica",
-          "category": "Performance"
-        },
-        {
-          "title": "Construtora",
-          "category": "Business"
-        },
-        {
-          "title": "Consultoria",
-          "category": "Landing Page"
-        }
-      ]
+      "title": "Projetos e demonstrações",
+      "subtitle": "Um projeto publicado e demonstrações autorais. Os nomes e dados dos três modelos são fictícios.",
+      "labels": {
+        "live": "Projeto publicado",
+        "demo": "Demonstração autoral",
+        "visit": "Visitar site",
+        "explore": "Explorar demonstração"
+      }
     },
     "testimonials": {
       "title": "Depoimentos",
@@ -228,8 +209,9 @@
       "subtitle": "Desenvolvimento de sistemas e sites, do planejamento à publicação."
     },
     "portfolio": {
-      "title": "Portfolio",
-      "subtitle": "Modelos demonstrativos de estrutura e estilo. Não representam projetos entregues a clientes."
+      "title": "Projetos e demonstrações",
+      "subtitle": "Conheça o site publicado da JRD e explore três demonstrações autorais com nomes e dados fictícios.",
+      "gridTitle": "Explore os projetos"
     },
     "pricing": {
       "title": "Orçamentos",
