@@ -279,5 +279,107 @@
     "privacy": "Privacidade",
     "terms": "Termos",
     "copyright": "© {year} STARKE LOSUNG. Todos os direitos reservados."
+  },
+  "demoToolbar": {
+    "label": "Barra de demonstração",
+    "back": "Voltar ao portfólio",
+    "badge": "Demonstração autoral · STARKE LOSUNG",
+    "fictional": "Empresa fictícia",
+    "language": "Idioma da demonstração",
+    "quote": "Solicitar projeto semelhante"
+  },
+  "atlas": {
+    "skip": "Ir para o conteúdo",
+    "nav": "Navegação Atlas",
+    "services": "Serviços",
+    "process": "Como trabalhamos",
+    "faq": "Perguntas frequentes",
+    "navCta": "Seu próximo projeto",
+    "kicker": "Estratégia com direção",
+    "title": "Clareza para decidir.",
+    "titleAccent": "Estrutura para avançar.",
+    "intro": "Uma visão integrada de estratégia, operação e gestão. Da primeira pergunta ao plano de ação, um caminho mais claro para o seu negócio.",
+    "primary": "Quero um site como este",
+    "secondary": "Conheça a abordagem",
+    "heroNote": "Modelo de landing page B2B • Conteúdo ilustrativo",
+    "visualLabel": "Da visão à ação",
+    "visualNote": "Uma direção. Etapas conectadas.",
+    "visualSteps": [
+      "Diagnóstico",
+      "Estratégia",
+      "Execução"
+    ],
+    "principles": [
+      "Pensamento estratégico",
+      "Processos bem definidos",
+      "Decisões com contexto"
+    ],
+    "servicesKicker": "01 / O que fazemos",
+    "servicesTitle": "O próximo passo começa com a pergunta certa.",
+    "servicesIntro": "Três frentes complementares para organizar desafios e transformar ideias em planos possíveis.",
+    "serviceCards": [
+      {
+        "title": "Estratégia de negócio",
+        "description": "Olhar para o cenário, definir prioridades e desenhar um caminho coerente com os objetivos da organização.",
+        "deliverable": "Direção e prioridades"
+      },
+      {
+        "title": "Processos e operação",
+        "description": "Mapear a rotina, entender os pontos de fricção e estruturar fluxos de trabalho mais claros para as equipes.",
+        "deliverable": "Fluxos e responsabilidades"
+      },
+      {
+        "title": "Gestão e acompanhamento",
+        "description": "Organizar indicadores e rituais de acompanhamento para apoiar decisões e revisar o plano ao longo do caminho.",
+        "deliverable": "Indicadores e plano de ação"
+      }
+    ],
+    "processKicker": "02 / Nossa abordagem",
+    "processTitle": "Uma visão ampla. Um plano concreto.",
+    "processIntro": "Um processo pensado para dar contexto às decisões e clareza à execução, etapa por etapa.",
+    "steps": [
+      {
+        "title": "Escutar",
+        "description": "Compreender o momento, as pessoas e os desafios do negócio."
+      },
+      {
+        "title": "Conectar",
+        "description": "Relacionar informações e identificar o que merece atenção."
+      },
+      {
+        "title": "Planejar",
+        "description": "Definir ações, prioridades e responsabilidades."
+      },
+      {
+        "title": "Acompanhar",
+        "description": "Revisar o caminho e ajustar o plano com novos aprendizados."
+      }
+    ],
+    "faqKicker": "03 / Vamos esclarecer",
+    "faqTitle": "Boas perguntas abrem novos caminhos.",
+    "questions": [
+      {
+        "question": "O que é a Atlas Consulting?",
+        "answer": "A Atlas Consulting é uma marca fictícia criada pela STARKE LOSUNG para demonstrar uma landing page de consultoria. Os serviços apresentados ilustram a organização do conteúdo; não representam uma oferta comercial de uma consultoria real."
+      },
+      {
+        "question": "Este modelo pode ser adaptado ao meu negócio?",
+        "answer": "Sim. A estrutura pode orientar um projeto com sua marca, seus serviços e seu conteúdo real. O escopo e as funcionalidades são definidos com a STARKE LOSUNG conforme a necessidade do projeto."
+      },
+      {
+        "question": "Como solicito um projeto semelhante?",
+        "answer": "Use uma das chamadas para solicitar um projeto. O link abre o WhatsApp da STARKE LOSUNG com uma mensagem que identifica este modelo. Você revisa e confirma o envio no WhatsApp."
+      },
+      {
+        "question": "O modelo funciona no celular e em outros idiomas?",
+        "answer": "Esta demonstração tem versões em português e inglês e layout adaptado a telas menores. A navegação por seções e as perguntas frequentes também podem ser usadas pelo teclado."
+      }
+    ],
+    "ctaKicker": "Sua marca, sua próxima etapa",
+    "ctaTitle": "Dê uma direção clara à sua presença digital.",
+    "ctaText": "Gostou desta experiência? Converse com a STARKE LOSUNG sobre um site feito para o seu negócio.",
+    "ctaLink": "Solicitar um projeto à STARKE LOSUNG",
+    "footerNote": "Modelo autoral. Marca e conteúdo fictícios.",
+    "backTop": "Voltar ao topo"
   }
 }

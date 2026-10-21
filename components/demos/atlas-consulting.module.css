@@ -1,0 +1,97 @@
+.atlas { color-scheme: light; --atlas-blue: #15375e; --atlas-ink: #152c49; --atlas-muted: #53647a; background: #f9faf7; color: var(--atlas-ink); font-weight: 400; line-height: 1.6; }
+.atlas a:focus-visible, .atlas summary:focus-visible { outline: 3px solid #267a9d; outline-offset: 5px; box-shadow: none; }
+.atlas a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.atlas section { scroll-margin-top: 24px; }
+.skip { position: absolute; left: -10000px; }
+.skip:focus { left: 20px; z-index: 60; background: white; padding: 16px; }
+.header, .hero, .services, .approach, .faq, .footer { max-width: 1360px; margin: 0 auto; padding-left: 6%; padding-right: 6%; }
+.header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 28px; padding-bottom: 28px; }
+.brand { display: flex; align-items: center; gap: 9px; line-height: 1; font-size: 31px; font-weight: 650; letter-spacing: -.05em; }
+.brandSub { display: block; font-size: 8px; letter-spacing: .22em; margin-top: 6px; font-weight: 600; }
+.header nav { display: flex; gap: 30px; font-size: 12px; font-weight: 550; }
+.headerCta { font-size: 12px; border-bottom: 1px solid #15375e; padding: 9px 0; }
+.headerCta span { margin-left: 12px; }
+.main { color: var(--atlas-ink); background: #f9faf7; }
+.hero { padding-top: 52px; padding-bottom: 72px; display: grid; grid-template-columns: 1.15fr 1fr; gap: 6%; align-items: center; }
+.eyebrow { text-transform: uppercase; letter-spacing: .15em; font-size: 10px; font-weight: 650; margin-bottom: 24px; display: flex; align-items: center; gap: 9px; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #2f756d; }
+.hero h1 { font-size: clamp(40px, 4.5vw, 66px); line-height: 1.07; letter-spacing: -.055em; font-weight: 500; max-width: 630px; }
+.hero h1 span { color: #577692; display: block; }
+.intro { max-width: 470px; font-size: 14px; line-height: 1.85; color: var(--atlas-muted); margin-top: 28px; }
+.heroActions { margin-top: 32px; display: flex; align-items: center; flex-wrap: wrap; gap: 22px; }
+.button, .lightButton { display: inline-flex; align-items: center; justify-content: space-between; gap: 22px; background: var(--atlas-blue); color: #fff; padding: 16px 21px; border-radius: 3px; font-size: 12px; font-weight: 600; }
+.textLink { font-size: 12px; font-weight: 550; }
+.textLink span { margin-left: 8px; }
+.heroNote { margin-top: 25px; font-size: 10px; color: var(--atlas-muted); }
+.visual { background: #15375e; color: #fff; border-radius: 3px; padding: 26px 30px 0; position: relative; overflow: hidden; }
+.visualTop { display: flex; justify-content: space-between; align-items: center; font-size: 9px; letter-spacing: .17em; color: #cfdeed; }
+.visualTop > span:last-child { font-size: 25px; color: #92d4cf; }
+.diagram { width: 100%; height: auto; display: block; }
+.visualCaption h2 { font-size: 25px; letter-spacing: -.04em; font-weight: 450; }
+.visualCaption p { font-size: 11px; margin-top: 4px; color: #c4d5e6; }
+.visualSteps { display: flex; justify-content: space-between; gap: 8px; border-top: 1px solid #496581; margin-top: 24px; padding: 17px 0; font-size: 9px; }
+.visualSteps b { color: #92d4cf; font-weight: 500; margin-right: 7px; }
+.principles { border-top: 1px solid #dce2e7; border-bottom: 1px solid #dce2e7; display: flex; gap: 30px; justify-content: center; padding: 23px 6%; font-size: 12px; color: #53647a; }
+.principles > span { display: flex; align-items: center; gap: 14px; }
+.principles > span > span { color: #58867d; font-size: 20px; }
+.services { padding-top: 95px; padding-bottom: 95px; }
+.sectionHeading { display: grid; grid-template-columns: 1.2fr 1fr; gap: 10%; align-items: end; margin-bottom: 40px; }
+.atlas h2 { font-weight: 450; }
+.sectionHeading h2, .approach h2, .faq h2, .cta h2 { font-size: clamp(29px, 3vw, 43px); line-height: 1.18; letter-spacing: -.045em; }
+.sectionHeading p, .approachIntro { font-size: 13px; line-height: 1.85; color: var(--atlas-muted); }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #dce2e7; }
+.card { padding: 30px; background: #fff; }
+.card + .card { border-left: 1px solid #dce2e7; }
+.cardIndex { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #6a8095; margin-bottom: 46px; }
+.cardIndex span:last-child { font-size: 24px; color: #15375e; }
+.card h3 { font-size: 20px; font-weight: 550; line-height: 1.25; letter-spacing: -.035em; margin-bottom: 16px; }
+.card p { color: var(--atlas-muted); font-size: 12px; line-height: 1.9; }
+.deliverable { border-top: 1px solid #dce2e7; margin-top: 25px; padding-top: 18px; font-size: 10px; color: #416478; }
+.approach { display: grid; grid-template-columns: 1fr 1fr; gap: 12%; padding-top: 76px; padding-bottom: 76px; background: #edf1ef; }
+.approachIntro { margin-top: 24px; }
+.steps { list-style: none; }
+.steps li { display: flex; gap: 24px; padding: 22px 0; border-bottom: 1px solid #cdd8d5; }
+.steps li:first-child { padding-top: 0; }
+.stepNumber { border: 1px solid #b6c8c4; border-radius: 50%; height: 34px; min-width: 34px; display: grid; place-items: center; font-size: 11px; }
+.steps h3 { font-size: 17px; font-weight: 550; letter-spacing: -.025em; }
+.steps p { font-size: 12px; margin-top: 5px; color: var(--atlas-muted); }
+.faq { display: grid; grid-template-columns: .9fr 1.1fr; gap: 12%; padding-top: 95px; padding-bottom: 95px; }
+.questions details { border-bottom: 1px solid #dce2e7; }
+.questions details:first-child { border-top: 1px solid #dce2e7; }
+.questions summary { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 22px 0; list-style: none; font-size: 13px; font-weight: 550; cursor: pointer; }
+.questions summary::-webkit-details-marker { display: none; }
+.questions summary span { font-size: 22px; font-weight: 400; }
+.questions details[open] summary span { transform: rotate(45deg); }
+.questions details p { color: var(--atlas-muted); font-size: 12px; line-height: 1.9; padding-bottom: 24px; }
+.cta { background: #15375e; color: #fff; padding: 65px 6%; display: flex; justify-content: space-between; align-items: center; gap: 50px; }
+.cta > div { max-width: 580px; }
+.cta .eyebrow { color: #a8d7d1; }
+.cta > div > p:last-child { font-size: 13px; color: #cedce9; margin-top: 20px; }
+.lightButton { color: #15375e; background: #e6f2ee; flex-shrink: 0; }
+.footer { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-top: 36px; padding-bottom: 36px; }
+.footer p { font-size: 10px; color: var(--atlas-muted); line-height: 1.9; }
+@media (min-width: 1440px) { .cta { padding-left: calc((100% - 1197px) / 2); padding-right: calc((100% - 1197px) / 2); } }
+@media (max-width: 1000px) { .header nav { gap: 16px; } .headerCta { display: none; } .hero { gap: 4%; } .visual { padding: 22px 22px 0; } .card { padding: 24px; } .cta { flex-direction: column; align-items: flex-start; gap: 30px; } }
+@media (max-width: 700px) {
+  .header, .hero, .services, .approach, .faq, .footer { padding-left: 22px; padding-right: 22px; }
+  .header { flex-wrap: wrap; gap: 22px; padding-top: 24px; padding-bottom: 10px; }
+  .header nav { width: 100%; justify-content: space-between; font-size: 11px; }
+  .hero { grid-template-columns: 1fr; gap: 38px; padding-top: 40px; padding-bottom: 38px; }
+  .hero h1 { max-width: 510px; font-size: clamp(39px, 8.5vw, 54px); }
+  .intro { font-size: 13px; margin-top: 24px; }
+  .heroActions { gap: 18px; }
+  .heroNote { font-size: 9px; }
+  .visual { max-width: 480px; width: 100%; justify-self: center; }
+  .principles { flex-direction: column; gap: 10px; padding: 20px 22px; font-size: 11px; }
+  .services, .faq { padding-top: 56px; padding-bottom: 56px; }
+  .sectionHeading, .approach, .faq { grid-template-columns: 1fr; gap: 28px; }
+  .sectionHeading { margin-bottom: 28px; }
+  .cards { grid-template-columns: 1fr; }
+  .card + .card { border-left: 0; border-top: 1px solid #dce2e7; }
+  .cardIndex { margin-bottom: 23px; }
+  .approach { padding-top: 48px; padding-bottom: 48px; gap: 34px; }
+  .cta { padding: 46px 22px; }
+  .lightButton { font-size: 11px; gap: 14px; max-width: 100%; }
+  .footer { flex-wrap: wrap; gap: 24px; }
+  .footer p { width: 100%; order: 3; }
+}

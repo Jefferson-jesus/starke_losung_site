@@ -279,5 +279,107 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "copyright": "© {year} STARKE LOSUNG. All rights reserved."
+  },
+  "demoToolbar": {
+    "label": "Demo toolbar",
+    "back": "Back to portfolio",
+    "badge": "Original demo · STARKE LOSUNG",
+    "fictional": "Fictional company",
+    "language": "Demo language",
+    "quote": "Request a similar project"
+  },
+  "atlas": {
+    "skip": "Skip to content",
+    "nav": "Atlas navigation",
+    "services": "Services",
+    "process": "Our approach",
+    "faq": "Frequently asked questions",
+    "navCta": "Your next project",
+    "kicker": "Strategy with direction",
+    "title": "Clarity to decide.",
+    "titleAccent": "Structure to move forward.",
+    "intro": "A connected view of strategy, operations and management. From the first question to the action plan, a clearer path for your business.",
+    "primary": "I want a website like this",
+    "secondary": "Explore the approach",
+    "heroNote": "B2B landing page demo • Illustrative content",
+    "visualLabel": "From vision to action",
+    "visualNote": "One direction. Connected steps.",
+    "visualSteps": [
+      "Discovery",
+      "Strategy",
+      "Execution"
+    ],
+    "principles": [
+      "Strategic thinking",
+      "Well-defined processes",
+      "Decisions in context"
+    ],
+    "servicesKicker": "01 / What we do",
+    "servicesTitle": "The next step starts with the right question.",
+    "servicesIntro": "Three complementary perspectives to organize challenges and turn ideas into practical plans.",
+    "serviceCards": [
+      {
+        "title": "Business strategy",
+        "description": "Understand the landscape, define priorities and chart a course aligned with the organization’s objectives.",
+        "deliverable": "Direction and priorities"
+      },
+      {
+        "title": "Processes and operations",
+        "description": "Map everyday work, understand friction points and build clearer workflows for teams.",
+        "deliverable": "Workflows and responsibilities"
+      },
+      {
+        "title": "Management and review",
+        "description": "Organize indicators and review routines to support decisions and revisit the plan along the way.",
+        "deliverable": "Indicators and action plan"
+      }
+    ],
+    "processKicker": "02 / Our approach",
+    "processTitle": "A broad perspective. A concrete plan.",
+    "processIntro": "A process designed to give decisions context and execution clarity, one step at a time.",
+    "steps": [
+      {
+        "title": "Listen",
+        "description": "Understand the business, its people and its current challenges."
+      },
+      {
+        "title": "Connect",
+        "description": "Bring information together and identify what needs attention."
+      },
+      {
+        "title": "Plan",
+        "description": "Define actions, priorities and responsibilities."
+      },
+      {
+        "title": "Review",
+        "description": "Revisit the path and adapt the plan as new insights emerge."
+      }
+    ],
+    "faqKicker": "03 / Let’s clarify",
+    "faqTitle": "Good questions open new paths.",
+    "questions": [
+      {
+        "question": "What is Atlas Consulting?",
+        "answer": "Atlas Consulting is a fictional brand created by STARKE LOSUNG to demonstrate a consultancy landing page. The services illustrate how content can be organized; they are not an offer from a real consultancy."
+      },
+      {
+        "question": "Can this demo be adapted to my business?",
+        "answer": "Yes. This structure can inform a project with your brand, your services and your real content. The scope and features are agreed with STARKE LOSUNG based on your project’s needs."
+      },
+      {
+        "question": "How do I request a similar project?",
+        "answer": "Use one of the project request links. It opens STARKE LOSUNG’s WhatsApp with a message identifying this demo. You review and confirm sending the message in WhatsApp."
+      },
+      {
+        "question": "Does this demo work on mobile and in other languages?",
+        "answer": "This demo has Portuguese and English versions and a layout that adapts to smaller screens. Section navigation and frequently asked questions also work with a keyboard."
+      }
+    ],
+    "ctaKicker": "Your brand, your next chapter",
+    "ctaTitle": "Give your digital presence a clear direction.",
+    "ctaText": "Like this experience? Talk to STARKE LOSUNG about a website built for your business.",
+    "ctaLink": "Request a project from STARKE LOSUNG",
+    "footerNote": "Original demo. Fictional brand and content.",
+    "backTop": "Back to top"
   }
 }
